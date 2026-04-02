@@ -253,6 +253,6 @@
     .form-row { grid-template-columns: 1fr; }
   }
 @media (max-width: 480px) {
-  .hero-left { padding: 7rem 2rem 4rem; }
+  .hero-left { padding: 8rem 2rem 4rem; }
   .hero-headline { font-size: 2.4rem !important; }
 }
