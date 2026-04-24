@@ -419,7 +419,38 @@
       }
     });
   }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
+    reveals.forEach(el => observer.observe(el));
+
+  // TWO ROADS
+  function showRoad(road) {
+    document.getElementById('panelChronic').classList.remove('active');
+    document.getElementById('panelResolved').classList.remove('active');
+    document.getElementById('btnChronic').classList.remove('toggle-active', 'toggle-active-resolved');
+    document.getElementById('btnResolved').classList.remove('toggle-active', 'toggle-active-resolved');
+    document.querySelectorAll('.road-step, .road-outcome').forEach(el => el.classList.remove('visible'));
+    const indicator = document.getElementById('toggleIndicator');
+    if (road === 'chronic') {
+      document.getElementById('panelChronic').classList.add('active');
+      document.getElementById('btnChronic').classList.add('toggle-active');
+      indicator.className = 'toggle-indicator chronic';
+      animateRoadSteps(document.getElementById('panelChronic'));
+    } else {
+      document.getElementById('panelResolved').classList.add('active');
+      document.getElementById('btnResolved').classList.add('toggle-active', 'toggle-active-resolved');
+      indicator.className = 'toggle-indicator resolved';
+      animateRoadSteps(document.getElementById('panelResolved'));
+    }
+  }
+  function animateRoadSteps(panel) {
+    panel.querySelectorAll('.road-step').forEach((s, i) => setTimeout(() => s.classList.add('visible'), i * 100));
+    const outcome = panel.querySelector('.road-outcome');
+    if (outcome) setTimeout(() => outcome.classList.add('visible'), 600);
+  }
+  setTimeout(() => animateRoadSteps(document.getElementById('panelChronic')), 300);
+  const reframeObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { document.getElementById('roadsReframe').classList.add('visible'); reframeObs.unobserve(e.target); }});
+  }, { threshold: 0.2 });
+  reframeObs.observe(document.getElementById('roadsReframe'));
 </script>
 
 </body>
