@@ -266,10 +266,10 @@ footer { background: var(--dark); padding: 3rem 4rem; display: flex; justify-con
   .nav-logo { font-size: 1.35rem; line-height: 1; letter-spacing: 0.05em; }
   .nav-links { display: none; }
   .nav-cta { font-size: 0.62rem; letter-spacing: 0.14em; padding: 0.7rem 1rem; }
-  #hero { grid-template-columns: 1fr; grid-template-rows: auto auto; padding-top: 88px !important; min-height: auto; }
-  .hero-left { order: 1; padding: 4rem 2rem 4rem; min-height: auto; }
-  .hero-right { order: 2; height: 58vh; min-height: 420px; }
-  .hero-right img { position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  #hero { display: flex !important; flex-direction: column !important; padding-top: 88px !important; min-height: auto !important; grid-template-columns: none !important; grid-template-rows: none !important; }
+  .hero-left { width: 100% !important; order: 1; padding: 3rem 1.5rem; min-height: auto; }
+  .hero-right { width: 100% !important; order: 2; height: 50vh; min-height: 390px; }
+  .hero-right img { position: relative !important; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
   .section-inner { padding: 0 2rem; }
   .about-grid, .services-header, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
   .method-grid { grid-template-columns: 1fr; }
@@ -285,13 +285,14 @@ footer { background: var(--dark); padding: 3rem 4rem; display: flex; justify-con
   nav { padding: 0.95rem 1.25rem; min-height: 82px; }
   .nav-logo { font-size: 1.25rem; }
   .nav-cta { font-size: 0.58rem; letter-spacing: 0.12em; padding: 0.65rem 0.85rem; }
-  #hero { padding-top: 82px !important; }
-  .hero-left { padding: 3.25rem 1.6rem 3.5rem; }
+  #hero { display: flex !important; flex-direction: column !important; padding-top: 82px !important; min-height: auto !important; }
+  .hero-left { width: 100% !important; padding: 3.25rem 1.6rem 3.5rem; }
   .hero-eyebrow { font-size: 0.58rem; letter-spacing: 0.22em; line-height: 1.8; margin-bottom: 1.5rem; }
   .hero-headline { font-size: 3rem !important; line-height: 1.05; }
   .hero-sub { font-size: 0.92rem; line-height: 1.85; max-width: 100%; }
   .hero-btn { width: 100%; text-align: center; padding: 1rem 1.2rem; }
-  .hero-right { height: 48vh; min-height: 360px; }
+  .hero-right { width: 100% !important; height: 50vh; min-height: 360px; }
+  .hero-right img { position: relative !important; height: 100%; object-fit: cover; }
   .section-inner { padding: 0 1.5rem; }
   .offer-left, .offer-right { padding: 2.5rem 1.5rem; }
   #about, #method, #services, #contact, #for-who, #process { padding-top: 5rem !important; padding-bottom: 5rem !important; }
