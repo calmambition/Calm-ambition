@@ -256,3 +256,66 @@
   .hero-left { padding: 8rem 2rem 4rem; }
   .hero-headline { font-size: 2.4rem !important; }
 }
+/* TWO ROADS TOGGLE */
+.roads-toggle { display: inline-flex; border: 1px solid rgba(184,206,180,0.2); margin-bottom: 2.5rem; position: relative; overflow: hidden; }
+.toggle-btn { font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.85rem 2rem; background: transparent; color: var(--taupe); border: none; cursor: pointer; transition: color 0.3s; position: relative; z-index: 1; white-space: nowrap; }
+.toggle-btn.toggle-active { color: var(--cream); }
+.toggle-btn.toggle-active-resolved { color: var(--dark); }
+.toggle-indicator { position: absolute; top: 0; bottom: 0; width: 50%; transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), background 0.35s; z-index: 0; }
+.toggle-indicator.chronic { transform: translateX(0); background: rgba(255,255,255,0.06); }
+.toggle-indicator.resolved { transform: translateX(100%); background: var(--cream); }
+
+.road-panel { display: none; }
+.road-panel.active { display: block; }
+
+.road-steps-list { display: flex; flex-direction: column; }
+.road-step { display: flex; gap: 1.5rem; padding: 1.8rem 0; border-top: 1px solid; align-items: flex-start; opacity: 0; transform: translateY(12px); transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s; }
+.road-step.visible { opacity: 1; transform: translateY(0); }
+
+.chronic-step { border-color: rgba(184,206,180,0.12); }
+.chronic-step:hover { background: rgba(255,255,255,0.03); }
+.resolved-step { border-color: var(--sand); background: var(--cream); }
+.resolved-step:hover { background: var(--warm-white); }
+
+.step-num { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; line-height: 1; flex-shrink: 0; width: 2.5rem; margin-top: 0.15rem; opacity: 0.3; }
+.step-num-chronic { color: var(--accent-light); }
+.step-num-resolved { color: var(--accent); }
+
+.step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; line-height: 1.2; margin-bottom: 0.35rem; }
+.step-title-chronic { color: var(--cream); }
+.step-title-resolved { color: var(--dark); }
+
+.step-body { font-size: 0.82rem; line-height: 1.7; font-weight: 300; margin-bottom: 0.35rem; }
+.step-body-chronic { color: var(--taupe); }
+.step-body-resolved { color: var(--charcoal); }
+
+.step-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.88rem; opacity: 0.65; }
+.step-quote-chronic { color: var(--accent-light); }
+.step-quote-resolved { color: var(--accent); }
+
+.road-outcome { margin-top: 2px; padding: 2rem 0; border-top: 1px solid; opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.road-outcome.visible { opacity: 1; transform: translateY(0); }
+.chronic-outcome { border-color: rgba(184,206,180,0.12); }
+.resolved-outcome { border-color: var(--sand); background: var(--cream); padding: 2rem; }
+
+.outcome-label { font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; margin-bottom: 1rem; }
+.outcome-label-chronic { color: var(--accent-light); }
+.outcome-label-resolved { color: var(--accent); }
+
+.outcome-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.outcome-list li { font-size: 0.82rem; line-height: 1.6; display: flex; align-items: flex-start; gap: 0.8rem; }
+.outcome-list li::before { content: ''; width: 14px; height: 1px; flex-shrink: 0; margin-top: 0.62rem; }
+.outcome-item-chronic { color: var(--taupe); }
+.outcome-item-chronic::before { background: var(--accent-light); }
+.outcome-item-resolved { color: var(--charcoal); }
+.outcome-item-resolved::before { background: var(--accent); }
+
+.roads-reframe { margin-top: 4rem; padding: 2.5rem 3rem; border-left: 2px solid var(--accent-light); opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.roads-reframe.visible { opacity: 1; transform: translateY(0); }
+.roads-reframe-text { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; line-height: 1.8; color: var(--cream); font-style: italic; }
+
+@media (max-width: 700px) {
+  .toggle-btn { padding: 0.75rem 1.2rem; font-size: 0.62rem; }
+  .road-step { gap: 1rem; padding: 1.4rem 0; }
+  .roads-reframe { padding: 1.8rem; margin-top: 2.5rem; }
+}
