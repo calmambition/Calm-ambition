@@ -114,14 +114,16 @@
   <!-- NAV -->
   <nav id="nav">
     <a href="version3.html" class="nav-logo">Calm Ambition</a>
-    <ul class="nav-links">
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+    <ul class="nav-links" id="mobileNav">
+      <li><a href="version3.html">Home</a></li>
       <li><a href="version3.html#about">About</a></li>
       <li><a href="version3.html#for-who">Who It's For</a></li>
       <li><a href="version3.html#method">The Method</a></li>
       <li><a href="version3.html#burnout">Burnout Explained</a></li>
       <li><a href="blog.html" style="color:var(--accent);">Blog</a></li>
+      <li><a href="version3.html#contact">Contact</a></li>
     </ul>
-    <a href="version3.html#contact" class="nav-cta">Book a Call</a>
   </nav>
 
   <!-- HERO -->
@@ -166,6 +168,16 @@
     </div>
   </section>
 
+  <!-- CTA -->
+  <section style="padding:6rem 0;background:var(--dark);text-align:center;">
+    <div class="section-inner" style="max-width:560px;">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--cream);line-height:1.3;margin-bottom:1rem;">If what you're reading feels familiar, it might be worth a conversation.</p>
+      <p style="font-size:.9rem;color:var(--taupe);line-height:1.8;margin-bottom:2rem;">A free 30-minute call to talk through where you are and whether this is the right fit.</p>
+      <a href="version3.html#contact" class="hero-btn" style="opacity:1;animation:none;display:inline-block;">Apply for a Discovery Call</a>
+      <p style="font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--taupe);margin-top:.75rem;opacity:.7;">30 minutes &nbsp;&middot;&nbsp; No pitch &nbsp;&middot;&nbsp; No pressure</p>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">Calm Ambition</div>
@@ -180,6 +192,12 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    function toggleMobileMenu() {
+      const mn = document.getElementById('mobileNav');
+      const btn = document.getElementById('mobileMenuToggle');
+      const open = mn.classList.toggle('mobile-open');
+      btn.setAttribute('aria-expanded', String(open));
+    }
   </script>
 
 </body>
