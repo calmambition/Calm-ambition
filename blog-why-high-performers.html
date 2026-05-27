@@ -150,6 +150,14 @@
     }
     .cta-btn:hover { background: var(--brown); transform: translateY(-2px); }
 
+    /* ── AUTHOR BIO ────────────────────────────────────────── */
+    .author-bio { background: var(--cream); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); padding: 3rem 0; }
+    .author-inner { display: flex; align-items: center; gap: 2rem; max-width: 760px; }
+    .author-img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: center top; flex-shrink: 0; background: var(--sand); }
+    .author-name { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+    .author-desc { font-size: 0.875rem; color: var(--charcoal); line-height: 1.75; font-weight: 300; }
+    @media (max-width: 680px) { .author-inner { flex-direction: column; align-items: flex-start; gap: 1rem; } }
+
     /* ── BACK + FOOTER ─────────────────────────────────────── */
     .back-section { padding: 3rem 0 2rem; background: var(--warm-white); border-top: 1px solid var(--sand); }
     .back-link {
@@ -268,6 +276,8 @@
 
         <p>Then it's about understanding what makes slowing down feel unsafe. For most high performers there are specific, long-held beliefs about what their value depends on, what they still have to prove. Those beliefs drive the pattern. Changing the pattern without understanding them rarely sticks.</p>
 
+        <p>Having spent fifteen years inside environments like KPMG, Deloitte, and CIBC, I know what those rooms ask of you. I also know what it costs to keep running at that pace without addressing what's underneath. The work we do together is built on that.</p>
+
         <p>None of this is soft or self-indulgent. It's the most practical thing you can do.</p>
 
         <hr class="article-divider" />
@@ -280,6 +290,8 @@
 
         <p>If you're not sure whether what you're experiencing counts, or you know it does and haven't been able to act on it, that uncertainty is useful information. It usually means something needs to shift. And the shift is more possible than it feels from where you're standing right now.</p>
 
+        <p style="margin-top:2rem;font-size:0.9rem;color:var(--brown);">&#8594; <a href="blog-signs-of-burnout.html" style="color:var(--brown);">5 Signs You're Burning Out — Not Just Tired</a></p>
+
       </div>
     </div>
   </section>
@@ -289,10 +301,23 @@
     <div class="section-inner">
       <span class="section-label">Calm Ambition Coaching</span>
       <h2 class="section-title">If you're ready to understand<br><em>what's actually going on</em></h2>
-      <p>A free discovery call is a no-pressure conversation about where you are, what's driving it, and what sustainable high performance could genuinely look like for you.</p>
+      <p>Thirty minutes. No pitch. No sales process. Just an honest look at where you are, what's driving it, and whether this is the right fit right now. You'll come away with clarity either way.</p>
       <a href="version3.html#contact" class="cta-btn">Book a Free Discovery Call</a>
     </div>
   </section>
+
+  <!-- AUTHOR BIO -->
+  <div class="author-bio">
+    <div class="section-inner">
+      <div class="author-inner">
+        <img src="Pri-about.PNG" alt="Pri" class="author-img" loading="lazy">
+        <div>
+          <p class="author-name">Written by Pri</p>
+          <p class="author-desc">Burnout recovery coach for high-performing professionals. Fifteen years inside KPMG, Deloitte, and CIBC. MBA, Rotman School of Management. Certified Coach, Wellness Coaching Australia. Based in Sydney, working worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- BACK -->
   <div class="back-section">
