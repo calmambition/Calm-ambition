@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Calm Ambition — Burnout Coaching for Professionals</title>
+  <meta name="description" content="Insights on burnout, sustainable performance, and what it takes to work hard without running on empty — written for ambitious professionals." />
+  <meta property="og:title" content="Blog | Calm Ambition" />
+  <meta property="og:description" content="Insights on burnout, sustainable performance, and what it takes to work hard without running on empty." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://calmambition.github.io/Calm-ambition/blog.html" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 16'><path d='M7 15 C7 15 7 8 7 4' stroke='%235C7A5C' stroke-width='1.5' stroke-linecap='round' fill='none'/><path d='M7 10 C5.5 9 3.5 7.5 3 5 C5.5 5.5 7 7.5 7 10Z' fill='%235C7A5C' opacity='0.85'/><path d='M7 7 C8.5 5.5 10.5 4 11 2 C8.5 2.5 7 4.5 7 7Z' fill='%235C7A5C' opacity='0.6'/></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── BLOG HERO ─────────────────────────────────────────── */
+    .blog-hero {
+      padding: 10rem 0 6rem;
+      background: var(--dark);
+    }
+    .blog-hero .section-label { color: var(--accent-light); }
+    .blog-hero .section-title { color: var(--cream); }
+    .blog-hero .section-title em { color: var(--accent-light); }
+    .blog-hero p {
+      font-size: 1rem;
+      color: var(--taupe);
+      line-height: 1.9;
+      max-width: 480px;
+      margin-top: 1.5rem;
+    }
+
+    /* ── POSTS SECTION ─────────────────────────────────────── */
+    .posts-section {
+      padding: 6rem 0 8rem;
+      background: var(--warm-white);
+    }
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin-top: 4rem;
+    }
+
+    /* ── POST CARD ─────────────────────────────────────────── */
+    .post-card {
+      background: var(--cream);
+      border: 1px solid var(--sand);
+      padding: 3.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .post-card:hover {
+      box-shadow: 0 12px 40px rgba(30,40,32,0.1);
+      transform: translateY(-3px);
+    }
+    .card-tag {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+    .card-read {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      float: right;
+      margin-top: -1.8rem;
+    }
+    .post-card h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    .post-card p {
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      line-height: 1.9;
+      flex: 1;
+      margin-bottom: 2rem;
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brown);
+      text-decoration: none;
+      border-bottom: 1px solid var(--sand);
+      padding-bottom: 2px;
+      width: fit-content;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .card-link:hover { color: var(--dark); border-color: var(--taupe); }
+    .card-link svg { transition: transform 0.2s; }
+    .card-link:hover svg { transform: translateX(3px); }
+
+    @media (max-width: 900px) {
+      .posts-grid { grid-template-columns: 1fr; }
+      .blog-hero { padding: 8rem 0 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="version3.html" class="nav-logo">Calm Ambition</a>
+    <ul class="nav-links">
+      <li><a href="version3.html#about">About</a></li>
+      <li><a href="version3.html#for-who">Who It's For</a></li>
+      <li><a href="version3.html#method">The Method</a></li>
+      <li><a href="version3.html#burnout">Burnout Explained</a></li>
+      <li><a href="blog.html" style="color:var(--accent);">Blog</a></li>
+    </ul>
+    <a href="version3.html#contact" class="nav-cta">Book a Call</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="blog-hero">
+    <div class="section-inner">
+      <span class="section-label">Perspectives &amp; Insights</span>
+      <h1 class="section-title">Thinking clearly about<br><em>performance &amp; pressure</em></h1>
+      <p>Honest writing for high performers who want to work hard without paying a price they can't afford.</p>
+    </div>
+  </section>
+
+  <!-- POSTS -->
+  <section class="posts-section">
+    <div class="section-inner">
+      <div class="reveal">
+        <span class="section-label">Latest Articles</span>
+        <h2 class="section-title">From the blog</h2>
+      </div>
+      <div class="posts-grid">
+
+        <article class="post-card reveal">
+          <span class="card-tag">Burnout <span class="card-read">6 min read</span></span>
+          <h2>5 Signs You're Burning Out — Not Just Tired</h2>
+          <p>Burnout doesn't announce itself with a dramatic collapse. It creeps in quietly, disguised as things that feel almost reasonable. Here are the five signs high performers most commonly overlook — and why recognising them early matters.</p>
+          <a href="blog-signs-of-burnout.html" class="card-link">
+            Read article
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+        <article class="post-card reveal">
+          <span class="card-tag">High Performance <span class="card-read">7 min read</span></span>
+          <h2>Why High Performers Are the Last to Admit Burnout</h2>
+          <p>The skills that build success — resilience, high standards, the ability to push through — are often the same skills that accelerate burnout and make it invisible. Here's what's really going on, and what actually helps.</p>
+          <a href="blog-why-high-performers.html" class="card-link">
+            Read article
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Calm Ambition</div>
+    <div class="footer-tagline">Perform sustainably. Live fully.</div>
+    <div class="footer-copy">&copy; 2026 Calm Ambition. Sydney, Australia.</div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
