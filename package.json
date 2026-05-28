@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.2.11",
+    "@fontsource/jost": "^5.2.8",
+    "pdfkit": "^0.18.0"
+  }
+}
