@@ -168,7 +168,8 @@
   <!-- NAV -->
   <nav id="nav">
     <a href="index.html" class="nav-logo">Calm Ambition</a>
-    <ul class="nav-links">
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+    <ul class="nav-links" id="mobileNav">
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#for-who">Who It's For</a></li>
       <li><a href="index.html#method">The Method</a></li>
@@ -319,6 +320,7 @@
   <script>
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+    function toggleMobileMenu() { const mn = document.getElementById('mobileNav'); const btn = document.getElementById('mobileMenuToggle'); const open = mn.classList.toggle('mobile-open'); btn.setAttribute('aria-expanded', String(open)); }
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
     }, { threshold: 0.12 });
