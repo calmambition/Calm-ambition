@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free burnout self-assessment for high-performing professionals. Get personalized insights in under 5 minutes.">
+<meta property="og:title" content="Burnout Check-In | Calm Ambition">
+<meta property="og:description" content="Eleven questions to understand where your energy, engagement, and sense of impact sit right now.">
+<meta property="og:image" content="https://calmambition.github.io/Calm-ambition/og-image.png">
+<title>Burnout Check-In | Calm Ambition</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --charcoal: #2E3D30;
+  --cream: #F5F0E8;
+  --cream-deep: #EDE7DA;
+  --sage: #5C7A5C;
+  --sage-soft: #DCE6D7;
+  --gold: #A98E5F;
+  --dark: #1E2820;
+  --ink: #3D4A3E;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  background: var(--cream);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 28px 80px;
+}
+
+.inner {
+  width: 100%;
+  max-width: 620px;
+}
+
+.wordmark {
+  padding: 44px 0 0;
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.wordmark-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  margin: 0;
+}
+
+.wordmark-rule {
+  width: 36px;
+  height: 1px;
+  background: var(--gold);
+  margin: 14px auto 0;
+}
+
+/* States */
+.state { display: none; }
+.state.active { display: block; }
+
+/* Intro */
+.intro h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--charcoal);
+  margin: 0 0 26px;
+}
+
+.intro-desc {
+  font-size: 17px;
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.intro-note {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #7A766E;
+  margin-bottom: 40px;
+}
+
+button.btn-primary {
+  padding: 16px 44px;
+  background: var(--charcoal);
+  color: var(--cream);
+  border: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button.btn-primary:hover {
+  background: var(--ink);
+}
+
+button.btn-secondary {
+  padding: 15px 42px;
+  background: var(--charcoal);
+  color: var(--cream);
+  border: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 26px;
+}
+
+button.btn-back {
+  background: none;
+  border: none;
+  color: #9A958B;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  margin-top: 34px;
+  padding: 0;
+}
+
+/* Questions */
+.progress-bar {
+  height: 2px;
+  background: var(--cream-deep);
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.4s ease;
+  width: 0;
+}
+
+.progress-label {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: #9A958B;
+  margin-bottom: 40px;
+}
+
+.question-wrapper {
+  animation: rise 0.45s ease both;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.question-wrapper h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--charcoal);
+  margin: 0 0 36px;
+}
+
+.scale-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 36px;
+}
+
+button.scale-option {
+  text-align: left;
+  padding: 15px 22px;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid #D8D2C4;
+  font-family: 'Jost', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+button.scale-option:hover {
+  border-color: var(--charcoal);
+}
+
+button.scale-option.selected {
+  background: var(--charcoal);
+  color: var(--cream);
+  border-color: var(--charcoal);
+}
+
+textarea.freetext {
+  width: 100%;
+  margin-top: 30px;
+  padding: 18px 20px;
+  background: #FFFDF8;
+  border: 1px solid #D8D2C4;
+  font-family: 'Jost', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.7;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+  min-height: 120px;
+}
+
+textarea.freetext:focus {
+  border-color: var(--charcoal);
+}
+
+/* Loading */
+.loading-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--sage);
+  margin: 0 auto;
+  animation: breathe 2.4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.55; }
+  50% { transform: scale(1.18); opacity: 1; }
+}
+
+.loading-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-style: italic;
+  color: var(--charcoal);
+  margin-top: 32px;
+  text-align: center;
+}
+
+.loading-subtext {
+  font-size: 14px;
+  color: #7A766E;
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* Email Gate */
+.email-gate {
+  background: rgba(168, 184, 160, 0.06);
+  border: 1px solid rgba(168, 184, 160, 0.2);
+  padding: 30px;
+}
+
+.email-gate h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: var(--charcoal);
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
+}
+
+.email-gate p {
+  font-size: 14px;
+  color: #A8B8A0;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.email-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.email-form input {
+  flex: 1;
+  min-width: 200px;
+  background: #FFFDF8;
+  border: 1px solid #D8D2C4;
+  color: var(--charcoal);
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  padding: 12px 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.email-form input::placeholder {
+  color: #9A968E;
+}
+
+.email-form button {
+  background: var(--sage);
+  color: var(--cream);
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.email-form button:hover {
+  opacity: 0.9;
+}
+
+.email-gate small {
+  font-size: 12px;
+  color: #A8B8A0;
+  opacity: 0.7;
+  line-height: 1.6;
+  display: block;
+}
+
+/* Readout */
+.readout-header {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.readout-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--charcoal);
+  margin: 0 0 44px;
+}
+
+.dimensions-section {
+  margin-top: 44px;
+}
+
+.dimension {
+  border-top: 1px solid var(--cream-deep);
+  padding: 26px 0;
+}
+
+.dimension-header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.dimension-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.dimension-level {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--sage);
+  padding: 4px 12px;
+}
+
+.dimension-level.strained {
+  background: var(--gold);
+}
+
+.dimension-level.depleted {
+  background: var(--dark);
+}
+
+.dimension-reflection {
+  font-size: 16px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.pattern-box {
+  background: var(--sage-soft);
+  padding: 30px;
+  margin-top: 36px;
+}
+
+.pattern-box .section-label {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.pattern-box p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.steps-section {
+  margin-top: 44px;
+}
+
+.steps-label {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+  display: block;
+}
+
+.step {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-style: italic;
+  color: var(--sage);
+  line-height: 1;
+  min-width: 24px;
+  flex-shrink: 0;
+}
+
+.step p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+  padding-top: 4px;
+}
+
+.readout-footer {
+  border-top: 1px solid var(--charcoal);
+  margin-top: 40px;
+  padding-top: 32px;
+  text-align: center;
+}
+
+.readout-footer-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--charcoal);
+  margin: 0 0 26px;
+}
+
+.readout-cta {
+  display: inline-block;
+  padding: 16px 44px;
+  background: var(--sage);
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+}
+
+.readout-cta:hover {
+  opacity: 0.9;
+}
+
+.readout-disclaimer {
+  font-size: 12px;
+  color: #9A958B;
+  margin-top: 28px;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Error */
+.error-text {
+  font-size: 17px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button.btn-error {
+  background: var(--sage);
+  color: var(--cream);
+  padding: 14px 36px;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .intro h1 { font-size: 34px; }
+  .intro-desc { font-size: 15px; }
+  .question-wrapper h2 { font-size: 24px; }
+  .readout-headline { font-size: 32px; }
+  .dimension-name { font-size: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .question-wrapper, .loading-dot { animation: none; }
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="inner">
+    <!-- Wordmark -->
+    <div class="wordmark">
+      <a href="../" style="text-decoration:none;color:inherit;"><h1 class="wordmark-title">Calm Ambition</h1></a>
+      <div class="wordmark-rule"></div>
+    </div>
+
+    <!-- Intro State -->
+    <div class="state active" id="intro">
+      <h1 class="intro h1">How sustainable is the way you're working?</h1>
+      <p class="intro-desc">Eleven questions. About four minutes. You'll get a personalised readout of where your energy, engagement and sense of impact sit right now, in plain language, with three small things to try.</p>
+      <p class="intro-note">This is a self-reflection tool, not a clinical assessment or diagnosis. Your answers aren't stored.</p>
+      <button class="btn-primary" onclick="startQuiz()">Begin</button>
+    </div>
+
+    <!-- Questions State -->
+    <div class="state" id="questions">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-label" id="progressLabel">1 / 11</div>
+      <div class="question-wrapper" id="questionContent"></div>
+      <button class="btn-back" id="backBtn" onclick="goBack()" style="display:none;">← Back</button>
+    </div>
+
+    <!-- Loading State -->
+    <div class="state" id="loading" style="padding-top:100px;text-align:center;">
+      <div class="loading-dot"></div>
+      <p class="loading-text">Reading your responses…</p>
+      <p class="loading-subtext">This takes about fifteen seconds.</p>
+    </div>
+
+    <!-- Email Gate State -->
+    <div class="state" id="emailGate" style="padding-top:56px;">
+      <div class="email-gate">
+        <h2>Your results are ready.</h2>
+        <p>Enter your email to see what your score means and receive your personalised readout.</p>
+        <form class="email-form" onsubmit="submitEmail(event)">
+          <input type="email" id="emailInput" placeholder="your@email.com" required>
+          <button type="submit" id="emailSubmitBtn">Send My Readout</button>
+        </form>
+        <small>No spam. One email with your results and next steps. That's it.</small>
+      </div>
+    </div>
+
+    <!-- Readout State -->
+    <div class="state" id="readout" style="padding-top:56px;"></div>
+
+    <!-- Error State -->
+    <div class="state" id="error" style="padding-top:100px;text-align:center;">
+      <p class="error-text">Something went wrong generating your readout.</p>
+      <button class="btn-error" onclick="retryReadout()">Try again</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Data
+const SCALE_QUESTIONS = [
+  { dim: "Exhaustion", text: "By the end of a workday, I have nothing left for the people or things I care about." },
+  { dim: "Exhaustion", text: "I wake up tired, even after a full night's sleep." },
+  { dim: "Exhaustion", text: "I feel a sense of dread before the week even starts." },
+  { dim: "Detachment", text: "I catch myself going through the motions on work I used to care about." },
+  { dim: "Detachment", text: "I'm more cynical or irritable with colleagues and clients than I'd like to be." },
+  { dim: "Detachment", text: "I've started keeping people at work at arm's length." },
+  { dim: "Efficacy", text: "I doubt whether my work is actually making a difference." },
+  { dim: "Efficacy", text: "Tasks that used to feel easy now take real effort to start or finish." },
+  { dim: "Efficacy", text: "I finish most days feeling like I accomplished very little." },
+];
+
+const FREE_TEXT = [
+  { key: "moment", prompt: "Describe a recent moment when work felt heaviest. What was happening?" },
+  { key: "sustainable", prompt: "If work felt sustainable six months from now, what would be different?" },
+];
+
+const SCALE = ["Rarely", "Sometimes", "Often", "Most days", "Every day"];
+const TOTAL_STEPS = SCALE_QUESTIONS.length + FREE_TEXT.length;
+
+// State
+let currentStep = 0;
+let answers = [];
+let freeText = { moment: "", sustainable: "" };
+let readoutData = null;
+
+function setState(name) {
+  document.querySelectorAll('.state').forEach(s => s.classList.remove('active'));
+  document.getElementById(name).classList.add('active');
+}
+
+function startQuiz() {
+  setState('questions');
+  currentStep = 0;
+  answers = [];
+  freeText = { moment: "", sustainable: "" };
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const isScale = currentStep < SCALE_QUESTIONS.length;
+  const q = isScale ? SCALE_QUESTIONS[currentStep] : FREE_TEXT[currentStep - SCALE_QUESTIONS.length];
+
+  const progress = ((currentStep + 1) / TOTAL_STEPS) * 100;
+  document.getElementById('progressFill').style.width = progress + '%';
+  document.getElementById('progressLabel').textContent = (currentStep + 1) + ' / ' + TOTAL_STEPS;
+
+  let html = '<div class="question-wrapper">';
+  html += '<h2>' + (isScale ? q.text : q.prompt) + '</h2>';
+
+  if (isScale) {
+    html += '<div class="scale-options">';
+    SCALE.forEach((label, i) => {
+      const selected = answers[currentStep] === i ? 'selected' : '';
+      html += '<button class="scale-option ' + selected + '" onclick="answerScale(' + i + ')">' + label + '</button>';
+    });
+    html += '</div>';
+  } else {
+    const ftIndex = currentStep - SCALE_QUESTIONS.length;
+    const key = FREE_TEXT[ftIndex].key;
+    html += '<textarea class="freetext" id="ftInput" placeholder="A sentence or two is plenty. Your words shape the readout.">' + (freeText[key] || '') + '</textarea>';
+    html += '<button class="btn-secondary" onclick="answerFreetext();">' + (currentStep + 1 === TOTAL_STEPS ? 'Get my readout' : 'Next') + '</button>';
+  }
+  html += '</div>';
+
+  document.getElementById('questionContent').innerHTML = html;
+
+  document.getElementById('backBtn').style.display = currentStep > 0 ? 'block' : 'none';
+}
+
+function answerScale(val) {
+  answers[currentStep] = val;
+  setTimeout(() => advance(), 220);
+}
+
+function answerFreetext() {
+  const input = document.getElementById('ftInput');
+  const ftIndex = currentStep - SCALE_QUESTIONS.length;
+  freeText[FREE_TEXT[ftIndex].key] = input.value;
+  advance();
+}
+
+function advance() {
+  if (currentStep + 1 >= TOTAL_STEPS) {
+    submitAnswers();
+  } else {
+    currentStep++;
+    renderQuestion();
+  }
+}
+
+function goBack() {
+  if (currentStep > 0) {
+    currentStep--;
+    renderQuestion();
+  }
+}
+
+async function submitAnswers() {
+  setState('loading');
+  try {
+    const response = await fetch('https://calm-ambition-checkin.pri-jain.workers.dev/readout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ answers, freeText })
+    });
+
+    if (!response.ok) throw new Error('API error');
+    readoutData = await response.json();
+    setState('emailGate');
+  } catch (e) {
+    console.error(e);
+    setState('error');
+  }
+}
+
+async function submitEmail(event) {
+  event.preventDefault();
+  const email = document.getElementById('emailInput').value.trim();
+  if (!email) return;
+
+  const btn = document.getElementById('emailSubmitBtn');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  try {
+    // Send email via Formspree
+    const formData = new FormData();
+    formData.append('email', email);
+    formData.append('_subject', 'Your Calm Ambition Burnout Check-In Results');
+    formData.append('_template', 'table');
+    formData.append('readout', JSON.stringify(readoutData));
+    formData.append('_source', 'check-in');
+
+    await fetch('https://formspree.io/mkoepynv', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    // Show readout
+    displayReadout();
+  } catch (e) {
+    console.error(e);
+    btn.textContent = 'Send My Readout';
+    btn.disabled = false;
+  }
+}
+
+function displayReadout() {
+  setState('readout');
+  const r = readoutData;
+
+  let html = '<div class="readout-header">Your readout</div>';
+  html += '<h1 class="readout-headline">' + r.headline + '</h1>';
+
+  html += '<div class="dimensions-section">';
+  const levelMap = {
+    'Steady': '', 'Strained': 'strained', 'Running on empty': 'depleted',
+    'Engaged': '', 'Pulling back': 'strained', 'Checked out': 'depleted',
+    'Confident': '', 'Wavering': 'strained', 'Doubting': 'depleted'
+  };
+
+  r.dimensions.forEach(d => {
+    const levelClass = levelMap[d.level] || '';
+    html += '<div class="dimension">';
+    html += '<div class="dimension-header">';
+    html += '<span class="dimension-name">' + d.name + '</span>';
+    html += '<span class="dimension-level ' + levelClass + '">' + d.level + '</span>';
+    html += '</div>';
+    html += '<p class="dimension-reflection">' + d.reflection + '</p>';
+    html += '</div>';
+  });
+  html += '</div>';
+
+  html += '<div class="pattern-box">';
+  html += '<span class="section-label">The pattern</span>';
+  html += '<p>' + r.pattern + '</p>';
+  html += '</div>';
+
+  html += '<div class="steps-section">';
+  html += '<span class="steps-label">Three small things to try</span>';
+  r.firstSteps.forEach((step, i) => {
+    html += '<div class="step">';
+    html += '<span class="step-num">' + (i + 1) + '</span>';
+    html += '<p>' + step + '</p>';
+    html += '</div>';
+  });
+  html += '</div>';
+
+  html += '<div class="readout-footer">';
+  html += '<p class="readout-footer-text">' + r.invitation + '</p>';
+  html += '<a href="https://calmambition.github.io/Calm-ambition/#contact" class="readout-cta">Book a discovery call</a>';
+  html += '<p class="readout-disclaimer">This readout is for self-reflection only and is not a medical or psychological diagnosis. If you\'re struggling, please speak with your GP or a mental health professional.</p>';
+  html += '</div>';
+
+  document.getElementById('readout').innerHTML = html;
+}
+
+function retryReadout() {
+  setState('loading');
+  setTimeout(submitAnswers, 100);
+}
+
+// Google Analytics event tracking
+function trackEvent(action) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'check_in_' + action);
+  }
+}
+
+window.addEventListener('load', () => trackEvent('view'));
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PSCPYSPL1B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PSCPYSPL1B');
+</script>
+</body>
+</html>
