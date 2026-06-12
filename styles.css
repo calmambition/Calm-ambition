@@ -10,6 +10,10 @@
   --accent: #5C7A5C;  /* brand name: Sage — primary accent, CTAs */
   --accent-light: #B8CEB4;
   --accent-text: #3D5C3D; /* darkened sage for text on light backgrounds — passes 4.5:1 contrast */
+
+  /* Maison identity accents */
+  --ca-gold: #A98E5F;       /* hairlines on light backgrounds */
+  --ca-gold-light: #D8C49A; /* hairlines on dark backgrounds */
 }
 
 html { scroll-behavior: smooth; }
@@ -40,9 +44,12 @@ nav {
 nav.scrolled { background: rgba(250, 248, 244, 0.97); box-shadow: 0 1px 0 rgba(92,122,92,0.15); }
 .nav-logo {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  font-weight: 400;
-  letter-spacing: 0.06em;
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: 0.26em;
+  text-indent: 0.26em;
+  text-transform: uppercase;
+  line-height: 1;
   color: var(--dark);
   text-decoration: none;
   white-space: nowrap;
@@ -50,6 +57,7 @@ nav.scrolled { background: rgba(250, 248, 244, 0.97); box-shadow: 0 1px 0 rgba(9
   margin-right: 2rem;
   border-right: 1px solid rgba(92,122,92,0.25);
 }
+.nav-logo:hover { opacity: 0.72; transition: opacity 0.25s ease; }
 .nav-links { display: flex; gap: 1.6rem; list-style: none; }
 .nav-links a {
   font-size: 0.68rem;
@@ -219,9 +227,63 @@ section { position: relative; }
 .form-submit:hover { background: var(--accent); }
 
 footer { background: var(--dark); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; }
-.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--cream); letter-spacing: 0.06em; }
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1rem; letter-spacing: 0.26em; text-indent: 0.26em; text-transform: uppercase; line-height: 1; color: var(--cream); }
 .footer-tagline { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--stone); }
 .footer-copy { font-size: 0.7rem; color: rgba(168,184,160,0.5); letter-spacing: 0.08em; }
+
+/* ——— Maison full lockup: hairline / wordmark / hairline (hero, ceremonial moments) ——— */
+.ca-logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: var(--ca-logo-size, 30px);
+  letter-spacing: 0.34em;
+  text-indent: 0.34em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--dark);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.ca-logo::before, .ca-logo::after {
+  content: '';
+  width: 5em;
+  height: 1px;
+  background: var(--ca-gold);
+}
+
+/* ——— Maison monogram: CA between hairlines (avatar chips, small marks) ——— */
+.ca-monogram {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.24em;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: var(--ca-logo-size, 28px);
+  letter-spacing: 0.12em;
+  text-indent: 0.12em;
+  line-height: 1;
+  color: var(--dark);
+  text-decoration: none;
+}
+.ca-monogram::before, .ca-monogram::after {
+  content: '';
+  width: 1.16em;
+  height: 1px;
+  background: var(--ca-gold);
+}
+
+/* ——— Reversed (dark backgrounds) ——— */
+.ca-reverse { color: var(--cream); }
+.ca-reverse.ca-logo::before, .ca-reverse.ca-logo::after,
+.ca-reverse.ca-monogram::before, .ca-reverse.ca-monogram::after {
+  background: var(--ca-gold-light);
+}
+a.ca-logo:hover, a.ca-monogram:hover { opacity: 0.72; transition: opacity 0.25s ease; }
 
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -273,7 +335,7 @@ footer { background: var(--dark); padding: 3rem 4rem; display: flex; justify-con
 
 @media (max-width: 900px) {
   nav { padding: 1rem 1.5rem; min-height: 88px; }
-  .nav-logo { font-size: 1.35rem; line-height: 1; letter-spacing: 0.05em; border-right: none; padding-right: 0; margin-right: 0; }
+  .nav-logo { font-size: 0.95rem; line-height: 1; border-right: none; padding-right: 0; margin-right: 0; }
   .mobile-menu-toggle { display: block; background: transparent; border: 1px solid rgba(92,122,92,0.4); color: var(--dark); font-family: 'Jost', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.55rem 0.9rem; cursor: pointer; }
   .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--dark); border-top: 1px solid rgba(168,184,160,0.18); padding: 1.4rem 1.5rem 1.6rem; flex-direction: column; gap: 1rem; z-index: 999; }
   .nav-links.mobile-open { display: flex; }
