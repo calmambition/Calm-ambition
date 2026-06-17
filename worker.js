@@ -102,6 +102,8 @@ Their words, in response to "what sustainable would look like in six months":
 
 ${INTERVENTION_LIBRARY}
 
+Use the exact level words shown for each dimension. For Connection, the healthy level is "Connected", never "Engaged".
+
 Respond with ONLY a valid JSON object, no markdown fences, no preamble, in exactly this shape:
 {
   "headline": "A short headline in plain spoken words (max 10 words). No colon constructions, no 'X, not Y' formula, no abstract nouns like depletion or crisis.",
