@@ -597,7 +597,7 @@ button.btn-error {
 const SCALE_QUESTIONS = [
   { dim: "Exhaustion", text: "By the end of a workday, I have nothing left for the people or things I care about." },
   { dim: "Exhaustion", text: "I wake up tired, even after a full night's sleep." },
-  { dim: "Exhaustion", text: "I feel a sense of dread before the week even starts." },
+  { dim: "Exhaustion", text: "When Sunday comes around, I feel a sense of dread about the week ahead.", scale: ["Rarely", "Sometimes", "Often", "Most weeks", "Every week"] },
   { dim: "Detachment", text: "I catch myself going through the motions on work I used to care about." },
   { dim: "Detachment", text: "I'm more cynical or irritable with colleagues and clients than I'd like to be." },
   { dim: "Detachment", text: "I've started keeping people at work at arm's length." },
@@ -646,7 +646,7 @@ function renderQuestion() {
 
   if (isScale) {
     html += '<div class="scale-options">';
-    SCALE.forEach((label, i) => {
+    (q.scale || SCALE).forEach((label, i) => {
       const selected = answers[currentStep] === i ? 'selected' : '';
       html += '<button class="scale-option ' + selected + '" onclick="answerScale(' + i + ')">' + label + '</button>';
     });

@@ -6,7 +6,7 @@
 const SCALE_QUESTIONS = [
   { dim: "Exhaustion", text: "By the end of a workday, I have nothing left for the people or things I care about." },
   { dim: "Exhaustion", text: "I wake up tired, even after a full night's sleep." },
-  { dim: "Exhaustion", text: "I feel a sense of dread before the week even starts." },
+  { dim: "Exhaustion", text: "When Sunday comes around, I feel a sense of dread about the week ahead.", scale: ["Rarely", "Sometimes", "Often", "Most weeks", "Every week"] },
   { dim: "Detachment", text: "I catch myself going through the motions on work I used to care about." },
   { dim: "Detachment", text: "I'm more cynical or irritable with colleagues and clients than I'd like to be." },
   { dim: "Detachment", text: "I've started keeping people at work at arm's length." },
@@ -66,7 +66,7 @@ function dimensionScores(answers) {
 function buildPrompt(answers, freeText) {
   const scores = dimensionScores(answers);
   const detail = SCALE_QUESTIONS.map(
-    (q, i) => `[${q.dim}] "${q.text}" -> ${SCALE[answers[i]]}`
+    (q, i) => `[${q.dim}] "${q.text}" -> ${(q.scale || SCALE)[answers[i]]}`
   ).join("\n");
 
   return `You are writing a personalised reflection for Calm Ambition, a burnout recovery and sustainable high-performance coaching practice for senior professionals, founded by a certified wellness coach with 15 years of corporate experience.
