@@ -107,7 +107,7 @@ Respond with ONLY a valid JSON object, no markdown fences, no preamble, in exact
   "headline": "A short headline in plain spoken words (max 10 words). No colon constructions, no 'X, not Y' formula, no abstract nouns like depletion or crisis.",
   "dimensions": [
     {"name": "Energy", "level": "Steady" | "Strained" | "Running on empty", "reflection": "2 sentences about their exhaustion answers, spoken to them. Point at what they actually said. No adverbs, no 'not X but Y', no aphorisms."},
-    {"name": "Connection", "level": "Engaged" | "Pulling back" | "Checked out", "reflection": "2 sentences about their detachment answers, same rules."},
+    {"name": "Connection", "level": "Connected" | "Pulling back" | "Checked out", "reflection": "2 sentences about their detachment answers, same rules."},
     {"name": "Impact", "level": "Confident" | "Wavering" | "Doubting", "reflection": "2 sentences about their efficacy answers, same rules."}
   ],
   "pattern": "One paragraph (3-4 sentences) said the way you would say it to them, connecting what they reported. Quote at least one phrase they actually wrote. Do not open with 'The pattern is', 'What stands out', or 'The disconnect'. No abstract nouns doing the acting.",
