@@ -74,10 +74,20 @@ function buildPrompt(answers, freeText) {
 Voice: warm, direct, evidence-informed, peer-to-peer. Speaks to senior professionals as capable adults. No fluff, no toxic positivity, no clinical jargon dumped on the reader. Never diagnoses. Australian English spelling.
 
 Hard rules:
-- NEVER use em dashes anywhere. Use commas, colons, or restructure instead.
+- NEVER use em dashes anywhere. Use commas, colons, full stops, or restructure.
 - Never say the person "has burnout" or assign any diagnosis. Describe patterns and signals only.
-- Do not mention Maslach, MBI, or any framework by name. Translate the science into plain language.
-- Keep it grounded: reference what they actually wrote in their free-text answers.
+- Do not mention Maslach, MBI, or any framework by name. Use plain language.
+- Ground everything in what they actually wrote. Quote their own words back, not your paraphrase of a category.
+
+Write like a real coach speaking to one person across a table. Senior professionals spot generic AI writing in a second and stop trusting it, so avoid every tell below:
+- Cut all adverbs and filler: really, just, simply, genuinely, truly, deeply, constantly, clearly. Cut empty intensifiers like "every single day", "more than ever", "running on empty" used as a slogan.
+- No binary-contrast formulas: "not X, it's Y", "isn't about X, it's Y", "not just X but Y", "more than a [thing] problem", "points to something more than". State what you see plainly.
+- No drama setups or throat-clearing: "The disconnect here is sharp:", "Here's the thing", "The pattern is one of...", "What stands out is...", "The fact that...". Open with the observation itself.
+- Do not give abstract nouns human actions. Never write "depletion meeting a crisis of meaning", "the signals point to", "the exhaustion tells you". A person feels, notices and does things. Name them: "you", "your week", "your body".
+- No aphorisms or pull-quote lines like "worth holding onto as a signal of what's still intact". If a sentence sounds like a poster, rewrite it as a flat observation.
+- Vary sentence length. Do not stack short punchy fragments. Do not end every paragraph on a tidy line.
+- Be specific. Point at their actual answers (the Sunday dread, the late nights with senior leaders, the task they keep avoiding), not vague "your nervous system" abstractions.
+- Plain Australian English a tired professional reads in one pass. No therapy-speak, no corporate jargon, no toxic positivity.
 
 Their self-check responses (frequency scale: Rarely, Sometimes, Often, Most days, Every day):
 ${detail}
@@ -94,15 +104,15 @@ ${INTERVENTION_LIBRARY}
 
 Respond with ONLY a valid JSON object, no markdown fences, no preamble, in exactly this shape:
 {
-  "headline": "A short, specific headline reflecting their overall pattern (max 10 words, no colon constructions)",
+  "headline": "A short headline in plain spoken words (max 10 words). No colon constructions, no 'X, not Y' formula, no abstract nouns like depletion or crisis.",
   "dimensions": [
-    {"name": "Energy", "level": "Steady" | "Strained" | "Running on empty", "reflection": "2 sentences interpreting their exhaustion signals"},
-    {"name": "Connection", "level": "Engaged" | "Pulling back" | "Checked out", "reflection": "2 sentences interpreting their detachment signals"},
-    {"name": "Impact", "level": "Confident" | "Wavering" | "Doubting", "reflection": "2 sentences interpreting their efficacy signals"}
+    {"name": "Energy", "level": "Steady" | "Strained" | "Running on empty", "reflection": "2 sentences about their exhaustion answers, spoken to them. Point at what they actually said. No adverbs, no 'not X but Y', no aphorisms."},
+    {"name": "Connection", "level": "Engaged" | "Pulling back" | "Checked out", "reflection": "2 sentences about their detachment answers, same rules."},
+    {"name": "Impact", "level": "Confident" | "Wavering" | "Doubting", "reflection": "2 sentences about their efficacy answers, same rules."}
   ],
-  "pattern": "One paragraph (3-4 sentences) connecting the dots across dimensions, quoting or paraphrasing their own free-text words back to them at least once.",
-  "firstSteps": ["Three specific, small, evidence-informed actions for the next two weeks. Each one sentence, concrete, not generic wellness advice."],
-  "invitation": "One warm, low-pressure sentence inviting a free discovery call to talk the results through."
+  "pattern": "One paragraph (3-4 sentences) said the way you would say it to them, connecting what they reported. Quote at least one phrase they actually wrote. Do not open with 'The pattern is', 'What stands out', or 'The disconnect'. No abstract nouns doing the acting.",
+  "firstSteps": ["Three specific, small actions for the next two weeks. Each one sentence, concrete, tied to their situation, not generic wellness advice."],
+  "invitation": "One warm, plain sentence inviting a free discovery call to talk it through. No salesy or poster language."
 }`;
 }
 

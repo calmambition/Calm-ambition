@@ -720,12 +720,22 @@ async function submitEmail(event) {
   btn.disabled = true;
 
   try {
-    // Send email via Formspree
+    // Send email via Formspree as readable, labelled fields (not raw JSON)
+    const r = readoutData || {};
     const formData = new FormData();
-    formData.append('email', email);
-    formData.append('_subject', 'Your Calm Ambition Burnout Check-In Results');
+    formData.append('_subject', 'New check-in lead: ' + email);
     formData.append('_template', 'table');
-    formData.append('readout', JSON.stringify(readoutData));
+    formData.append('_replyto', email);
+    formData.append('Respondent email', email);
+    formData.append('Headline', r.headline || '');
+    (r.dimensions || []).forEach(d => {
+      formData.append(d.name, (d.level ? d.level + '. ' : '') + (d.reflection || ''));
+    });
+    formData.append('The pattern', r.pattern || '');
+    (r.firstSteps || []).forEach((step, i) => {
+      formData.append('Step ' + (i + 1), step);
+    });
+    formData.append('Invitation', r.invitation || '');
     formData.append('_source', 'check-in');
 
     await fetch('https://formspree.io/mkoepynv', {
