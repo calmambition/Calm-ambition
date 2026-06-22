@@ -217,5 +217,16 @@ window.submitQaGate=function(e){
     +'</div></div>';
 };
 })();</script>
+<script>
+(function(){
+  function routeFromHash(){
+    var h=(location.hash||'').replace('#','').toLowerCase();
+    var map={contact:'contact',about:'about',method:'method',burnout:'burnout',testimonials:'testimonials',faq:'faq'};
+    if(h&&map[h]&&typeof showPage==='function')showPage(map[h]);
+  }
+  routeFromHash();
+  window.addEventListener('hashchange',routeFromHash);
+})();
+</script>
 </body>
 </html>
