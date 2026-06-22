@@ -597,7 +597,7 @@ button.btn-error {
 const SCALE_QUESTIONS = [
   { dim: "Exhaustion", text: "By the end of a workday, I have nothing left for the people or things I care about." },
   { dim: "Exhaustion", text: "I wake up tired, even after a full night's sleep." },
-  { dim: "Exhaustion", text: "When Sunday comes around, I feel a sense of dread about the week ahead.", scale: ["Rarely", "Sometimes", "Often", "Most weeks", "Every week"] },
+  { dim: "Exhaustion", text: "I feel a sense of dread before the week even starts." },
   { dim: "Detachment", text: "I catch myself going through the motions on work I used to care about." },
   { dim: "Detachment", text: "I'm more cynical or irritable with colleagues and clients than I'd like to be." },
   { dim: "Detachment", text: "I've started keeping people at work at arm's length." },
@@ -646,7 +646,7 @@ function renderQuestion() {
 
   if (isScale) {
     html += '<div class="scale-options">';
-    (q.scale || SCALE).forEach((label, i) => {
+    SCALE.forEach((label, i) => {
       const selected = answers[currentStep] === i ? 'selected' : '';
       html += '<button class="scale-option ' + selected + '" onclick="answerScale(' + i + ')">' + label + '</button>';
     });
@@ -719,38 +719,31 @@ async function submitEmail(event) {
   btn.textContent = 'Sending…';
   btn.disabled = true;
 
-  try {
-    // Send email via Formspree as readable, labelled fields (not raw JSON)
-    const r = readoutData || {};
+  // Notify the coach of the lead via Formspree
+  const leadNotify = (async () => {
     const formData = new FormData();
-    formData.append('_subject', 'New check-in lead: ' + email);
+    formData.append('email', email);
+    formData.append('_subject', 'New burnout check-in lead');
     formData.append('_template', 'table');
-    formData.append('_replyto', email);
-    formData.append('Respondent email', email);
-    formData.append('Headline', r.headline || '');
-    (r.dimensions || []).forEach(d => {
-      formData.append(d.name, (d.level ? d.level + '. ' : '') + (d.reflection || ''));
-    });
-    formData.append('The pattern', r.pattern || '');
-    (r.firstSteps || []).forEach((step, i) => {
-      formData.append('Step ' + (i + 1), step);
-    });
-    formData.append('Invitation', r.invitation || '');
+    formData.append('readout', JSON.stringify(readoutData));
     formData.append('_source', 'check-in');
-
-    await fetch('https://formspree.io/mkoepynv', {
+    return fetch('https://formspree.io/mkoepynv', {
       method: 'POST',
       body: formData,
       headers: { 'Accept': 'application/json' }
     });
+  })();
 
-    // Show readout
-    displayReadout();
-  } catch (e) {
-    console.error(e);
-    btn.textContent = 'Send My Readout';
-    btn.disabled = false;
-  }
+  // Email the readout to the visitor via the Worker
+  const visitorEmail = fetch('https://calm-ambition-checkin.pri-jain.workers.dev/email', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, readout: readoutData })
+  });
+
+  // Either delivery path may fail; the on-page readout is the guaranteed copy
+  await Promise.allSettled([leadNotify, visitorEmail]);
+  displayReadout();
 }
 
 function displayReadout() {
@@ -763,7 +756,7 @@ function displayReadout() {
   html += '<div class="dimensions-section">';
   const levelMap = {
     'Steady': '', 'Strained': 'strained', 'Running on empty': 'depleted',
-    'Connected': '', 'Pulling back': 'strained', 'Checked out': 'depleted',
+    'Engaged': '', 'Pulling back': 'strained', 'Checked out': 'depleted',
     'Confident': '', 'Wavering': 'strained', 'Doubting': 'depleted'
   };
 

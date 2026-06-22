@@ -150,81 +150,233 @@ async function generateReadout(answers, freeText, env) {
   return JSON.parse(clean);
 }
 
+// Email sending config
+const FROM_EMAIL = "Calm Ambition <hello@calmambition.com.au>";
+const REPLY_TO_EMAIL = "thecalmcoach.pri@gmail.com"; // replies land in Pri's Gmail
+const BOOKING_URL = "https://calmambition.github.io/Calm-ambition/#contact";
+
+function isAllowedOrigin(origin) {
+  return origin.includes("calmambition.github.io") || origin.includes("calmambition.com.au");
+}
+
+function corsHeaders(origin) {
+  return {
+    "Access-Control-Allow-Origin": isAllowedOrigin(origin) ? origin : "https://calmambition.github.io",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
+}
+
+function jsonResponse(obj, status, origin) {
+  return new Response(JSON.stringify(obj), {
+    status,
+    headers: { "Content-Type": "application/json", ...corsHeaders(origin) },
+  });
+}
+
+async function rateLimit(env, ip, bucket, max) {
+  const key = `${bucket}:${ip}`;
+  const count = parseInt(await env.KV.get(key)) || 0;
+  if (count >= max) return false;
+  await env.KV.put(key, String(count + 1), { expirationTtl: 3600 });
+  return true;
+}
+
+// HTML-escape user-influenced text before placing in the email template
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+// Validate the readout shape and field sizes before emailing it on
+function validReadout(r) {
+  if (!r || typeof r !== "object") return false;
+  if (typeof r.headline !== "string" || r.headline.length > 300) return false;
+  if (typeof r.pattern !== "string" || r.pattern.length > 1500) return false;
+  if (typeof r.invitation !== "string" || r.invitation.length > 600) return false;
+  if (!Array.isArray(r.dimensions) || r.dimensions.length > 5) return false;
+  for (const d of r.dimensions) {
+    if (!d || typeof d !== "object") return false;
+    if (typeof d.name !== "string" || d.name.length > 60) return false;
+    if (typeof d.level !== "string" || d.level.length > 60) return false;
+    if (typeof d.reflection !== "string" || d.reflection.length > 900) return false;
+  }
+  if (!Array.isArray(r.firstSteps) || r.firstSteps.length > 5) return false;
+  for (const s of r.firstSteps) {
+    if (typeof s !== "string" || s.length > 600) return false;
+  }
+  return true;
+}
+
+function buildEmailHtml(r) {
+  const dims = r.dimensions.map((d) => `
+    <tr><td style="padding:0 0 22px;">
+      <span style="font-family:Georgia,'Times New Roman',serif;font-size:20px;color:#2E3D30;">${esc(d.name)}</span>
+      <span style="font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#5C7A5C;padding-left:8px;">${esc(d.level)}</span>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.7;color:#3D4A3E;padding-top:6px;">${esc(d.reflection)}</div>
+    </td></tr>`).join("");
+
+  const steps = r.firstSteps.map((s, i) => `
+    <tr><td style="padding:0 0 14px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.7;color:#3D4A3E;">
+      <span style="font-family:Georgia,'Times New Roman',serif;font-style:italic;color:#5C7A5C;font-size:18px;padding-right:10px;">${i + 1}</span>${esc(s)}
+    </td></tr>`).join("");
+
+  return `<!DOCTYPE html><html><body style="margin:0;padding:0;background:#EDE7DA;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#EDE7DA;padding:32px 0;"><tr><td align="center">
+    <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#F5F0E8;">
+      <tr><td style="padding:36px 40px 0;text-align:center;">
+        <div style="font-family:Georgia,'Times New Roman',serif;font-size:18px;letter-spacing:5px;text-transform:uppercase;color:#2E3D30;">Calm Ambition</div>
+        <div style="width:36px;height:1px;background:#A98E5F;margin:12px auto 0;font-size:0;line-height:0;">&nbsp;</div>
+      </td></tr>
+      <tr><td style="padding:32px 40px 0;">
+        <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#5C7A5C;">Your readout</div>
+        <div style="font-family:Georgia,'Times New Roman',serif;font-size:30px;line-height:1.2;color:#2E3D30;padding-top:8px;">${esc(r.headline)}</div>
+      </td></tr>
+      <tr><td style="padding:28px 40px 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0">${dims}</table></td></tr>
+      <tr><td style="padding:6px 40px 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td style="background:#DCE6D7;padding:24px 26px;">
+        <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#5C7A5C;padding-bottom:8px;">The pattern</div>
+        <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.7;color:#3D4A3E;">${esc(r.pattern)}</div>
+      </td></tr></table></td></tr>
+      <tr><td style="padding:28px 40px 0;">
+        <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#5C7A5C;padding-bottom:14px;">Three small things to try</div>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${steps}</table>
+      </td></tr>
+      <tr><td style="padding:24px 40px 0;">
+        <div style="font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:18px;line-height:1.5;color:#2E3D30;text-align:center;border-top:1px solid #DCE6D7;padding-top:24px;">${esc(r.invitation)}</div>
+      </td></tr>
+      <tr><td style="padding:24px 40px 0;text-align:center;">
+        <table role="presentation" cellpadding="0" cellspacing="0" align="center"><tr><td style="background:#5C7A5C;">
+          <a href="${BOOKING_URL}" style="display:inline-block;padding:15px 38px;font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#F5F0E8;text-decoration:none;">Book a discovery call</a>
+        </td></tr></table>
+      </td></tr>
+      <tr><td style="padding:28px 40px 40px;">
+        <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.6;color:#8A8678;text-align:center;">This readout is for self-reflection only and is not a medical or psychological diagnosis. If you are struggling, please speak with your GP or a mental health professional.</div>
+      </td></tr>
+    </table>
+  </td></tr></table>
+  </body></html>`;
+}
+
+function buildEmailText(r) {
+  const dims = r.dimensions.map((d) => `${d.name} (${d.level})\n${d.reflection}`).join("\n\n");
+  const steps = r.firstSteps.map((s, i) => `${i + 1}. ${s}`).join("\n");
+  return [
+    "CALM AMBITION", "Your readout", "",
+    r.headline, "",
+    dims, "",
+    "THE PATTERN", r.pattern, "",
+    "THREE SMALL THINGS TO TRY", steps, "",
+    r.invitation, "",
+    "Book a discovery call: " + BOOKING_URL, "",
+    "This readout is for self-reflection only and is not a medical or psychological diagnosis. If you are struggling, please speak with your GP or a mental health professional.",
+  ].join("\n");
+}
+
+async function sendReadoutEmail(toEmail, readout, env) {
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${env.RESEND_API_KEY}`,
+    },
+    body: JSON.stringify({
+      from: FROM_EMAIL,
+      to: [toEmail],
+      reply_to: REPLY_TO_EMAIL,
+      subject: "Your Calm Ambition burnout check-in",
+      html: buildEmailHtml(readout),
+      text: buildEmailText(readout),
+    }),
+  });
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`Resend error: ${res.status} ${body}`);
+  }
+}
+
 export default {
   async fetch(request, env) {
+    const origin = request.headers.get("Origin") || "";
+
     // CORS preflight
     if (request.method === "OPTIONS") {
-      return new Response(null, {
-        headers: {
-          "Access-Control-Allow-Origin": "https://calmambition.github.io",
-          "Access-Control-Allow-Methods": "POST, OPTIONS",
-          "Access-Control-Allow-Headers": "Content-Type",
-        },
-      });
+      return new Response(null, { headers: corsHeaders(origin) });
     }
 
-    // Only POST to /readout
-    if (request.method !== "POST" || !request.url.includes("/readout")) {
-      return new Response(JSON.stringify({ error: "Not found" }), { status: 404 });
+    if (request.method !== "POST") {
+      return jsonResponse({ error: "Not found" }, 404, origin);
+    }
+    if (!isAllowedOrigin(origin)) {
+      return jsonResponse({ error: "CORS denied" }, 403, origin);
     }
 
-    // CORS check
-    const origin = request.headers.get("Origin") || "";
-    if (!origin.includes("calmambition.github.io")) {
-      return new Response(JSON.stringify({ error: "CORS denied" }), { status: 403 });
-    }
+    const path = new URL(request.url).pathname;
+    const ip = request.headers.get("cf-connecting-ip") || "unknown";
 
-    // Parse body
     let body;
     try {
       body = await request.json();
     } catch {
-      return new Response(JSON.stringify({ error: "Invalid JSON" }), { status: 400 });
+      return jsonResponse({ error: "Invalid JSON" }, 400, origin);
     }
 
-    const { answers, freeText } = body;
+    // --- /readout: generate the AI readout ---
+    if (path.endsWith("/readout")) {
+      const { answers, freeText } = body;
 
-    // Validate answers
-    if (!Array.isArray(answers) || answers.length !== 9) {
-      return new Response(JSON.stringify({ error: "answers must be array of 9 integers" }), { status: 400 });
-    }
-    if (!answers.every((a) => Number.isInteger(a) && a >= 0 && a <= 4)) {
-      return new Response(JSON.stringify({ error: "answers must be 0-4" }), { status: 400 });
-    }
+      if (!Array.isArray(answers) || answers.length !== 9) {
+        return jsonResponse({ error: "answers must be array of 9 integers" }, 400, origin);
+      }
+      if (!answers.every((a) => Number.isInteger(a) && a >= 0 && a <= 4)) {
+        return jsonResponse({ error: "answers must be 0-4" }, 400, origin);
+      }
+      if (!freeText || typeof freeText !== "object") {
+        return jsonResponse({ error: "freeText must be object" }, 400, origin);
+      }
+      const moment = String(freeText.moment || "").slice(0, 1000).replace(/[^\w\s.,\-()'"]/g, "");
+      const sustainable = String(freeText.sustainable || "").slice(0, 1000).replace(/[^\w\s.,\-()'"]/g, "");
 
-    // Validate free text
-    if (!freeText || typeof freeText !== "object") {
-      return new Response(JSON.stringify({ error: "freeText must be object" }), { status: 400 });
-    }
-    const moment = String(freeText.moment || "").slice(0, 1000).replace(/[^\w\s.,\-()'"]/g, "");
-    const sustainable = String(freeText.sustainable || "").slice(0, 1000).replace(/[^\w\s.,\-()'"]/g, "");
+      if (!(await rateLimit(env, ip, "ratelimit", 10))) {
+        return jsonResponse({ error: "Rate limited. Try again in 1 hour." }, 429, origin);
+      }
 
-    // Rate limit (simple IP-based using Cloudflare KV)
-    const ip = request.headers.get("cf-connecting-ip") || "unknown";
-    const rateLimitKey = `ratelimit:${ip}`;
-    const count = await env.KV.get(rateLimitKey);
-    if (count && parseInt(count) > 10) {
-      return new Response(
-        JSON.stringify({ error: "Rate limited. Try again in 1 hour." }),
-        { status: 429 }
-      );
-    }
-    await env.KV.put(rateLimitKey, String((parseInt(count) || 0) + 1), { expirationTtl: 3600 });
-
-    // Generate readout
-    let readout;
-    try {
-      readout = await generateReadout(answers, { moment, sustainable }, env);
-    } catch (e) {
-      console.error("Readout generation error:", e.message);
-      return new Response(JSON.stringify({ error: "Failed to generate readout" }), { status: 502 });
+      let readout;
+      try {
+        readout = await generateReadout(answers, { moment, sustainable }, env);
+      } catch (e) {
+        console.error("Readout generation error:", e.message);
+        return jsonResponse({ error: "Failed to generate readout" }, 502, origin);
+      }
+      return jsonResponse(readout, 200, origin);
     }
 
-    return new Response(JSON.stringify(readout), {
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "https://calmambition.github.io",
-      },
-    });
+    // --- /email: send the readout to the visitor ---
+    if (path.endsWith("/email")) {
+      const { email, readout } = body;
+
+      const emailOk = typeof email === "string" && email.length <= 200 && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+      if (!emailOk) {
+        return jsonResponse({ error: "Invalid email" }, 400, origin);
+      }
+      if (!validReadout(readout)) {
+        return jsonResponse({ error: "Invalid readout" }, 400, origin);
+      }
+      if (!(await rateLimit(env, ip, "emailrate", 6))) {
+        return jsonResponse({ error: "Rate limited. Try again in 1 hour." }, 429, origin);
+      }
+
+      try {
+        await sendReadoutEmail(email, readout, env);
+      } catch (e) {
+        console.error("Email send error:", e.message);
+        return jsonResponse({ error: "Failed to send email" }, 502, origin);
+      }
+      return jsonResponse({ sent: true }, 200, origin);
+    }
+
+    return jsonResponse({ error: "Not found" }, 404, origin);
   },
 };
