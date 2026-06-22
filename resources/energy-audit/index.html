@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PSCPYSPL1B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PSCPYSPL1B');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A two-minute energy audit for high performers. See which of your four energy areas is draining fastest, and the first thing to do about it.">
+<meta property="og:title" content="The Energy Audit | Calm Ambition">
+<meta property="og:description" content="Energy runs down across four areas, not one. Find where yours is leaking.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://calmambition.github.io/Calm-ambition/og-image.png">
+<meta property="og:url" content="https://calmambition.github.io/Calm-ambition/resources/energy-audit/">
+<link rel="canonical" href="https://calmambition.github.io/Calm-ambition/resources/energy-audit/">
+<link rel="icon" type="image/png" sizes="512x512" href="../../images/logo/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../images/logo/favicon-512.png">
+<title>The Energy Audit | Calm Ambition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: #E6E1D6; font-family: 'Jost', sans-serif; color: #2E3D30; padding: 48px 16px; }
+  button { font-family: inherit; }
+  input { font-family: inherit; }
+  input::placeholder { color: #A8B8A0; }
+  .ca-wrap { max-width: 860px; margin: 0 auto; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.1); border-radius: 2px; overflow: hidden; }
+  .ca-head { background: #1E2820; padding: 26px 48px; display: flex; align-items: center; justify-content: space-between; }
+  .ca-logo { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 18px; letter-spacing: 0.02em; color: #F5F0E8; text-decoration: none; }
+  .ca-tag { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(168,184,160,0.75); }
+  .ca-body { background: #FAF8F4; padding: 44px 48px 52px; }
+  .ca-h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 34px; line-height: 1.2; color: #1E2820; }
+  .ca-sub { font-weight: 300; font-size: 15px; line-height: 1.7; color: #5B6B58; margin-top: 10px; max-width: 580px; }
+  .legend { display: grid; grid-template-columns: 1fr repeat(4, 58px); gap: 12px; align-items: end; margin-top: 36px; padding-bottom: 12px; border-bottom: 1px solid rgba(30,40,32,0.12); }
+  .legend .lab { text-align: center; }
+  .legend .lab .w { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: #9AA694; line-height: 1.3; }
+  .legend .lab .n { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: #A98E5F; margin-top: 3px; }
+  .pillar-head { display: flex; align-items: center; gap: 14px; margin: 32px 0 4px; }
+  .pillar-head .num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: #5C7A5C; }
+  .pillar-head .ttl { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #5C7A5C; }
+  .pillar-head .rule { flex: 1; height: 1px; background: #D8C49A; opacity: 0.5; }
+  .qrow { display: grid; grid-template-columns: 1fr repeat(4, 58px); gap: 12px; align-items: center; padding: 16px 0; border-bottom: 1px solid rgba(30,40,32,0.08); }
+  .qtext { font-weight: 300; font-size: 15px; line-height: 1.55; color: #2E3D30; padding-right: 14px; }
+  .opt { width: 44px; height: 44px; border-radius: 50%; justify-self: center; display: flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; transition: all .15s ease; background: transparent; color: #A8B4A0; border: 1px solid #CFC9BB; }
+  .opt:hover { border-color: #5C7A5C; color: #5C7A5C; }
+  .opt.sel { background: #5C7A5C; color: #F5F0E8; border-color: #5C7A5C; }
+  .prog { display: flex; align-items: center; gap: 18px; margin-top: 30px; }
+  .prog .bar { flex: 1; height: 2px; background: rgba(30,40,32,0.1); position: relative; }
+  .prog .fill { position: absolute; left: 0; top: 0; bottom: 0; background: #5C7A5C; width: 0; transition: width .3s ease; }
+  .prog .lab { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #8A9684; white-space: nowrap; }
+  .cta-btn { border: none; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; padding: 16px 30px; border-radius: 2px; cursor: pointer; background: #1E2820; color: #F5F0E8; transition: all .2s ease; }
+  .cta-btn:hover { background: #2E3D30; }
+  .cta-btn[disabled] { background: #D6D0C2; color: #fff; cursor: not-allowed; }
+  .result { margin-top: 40px; }
+  .res-bars { background: #fff; border: 1px solid rgba(30,40,32,0.1); border-radius: 2px; padding: 34px 36px; }
+  .res-kicker { font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: #5C7A5C; }
+  .res-lead { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 30px; line-height: 1.15; color: #1E2820; margin-top: 10px; }
+  .barrow { margin-top: 22px; }
+  .barrow .top { display: flex; align-items: baseline; justify-content: space-between; }
+  .barrow .nm { font-size: 13px; letter-spacing: 0.04em; color: #2E3D30; }
+  .barrow .lv { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9684; }
+  .barrow .track { height: 8px; background: #ECE7DA; border-radius: 4px; margin-top: 8px; overflow: hidden; }
+  .barrow .meter { height: 100%; width: 0; border-radius: 4px; transition: width .6s ease; }
+  .read { background: #F5F0E8; border-radius: 2px; padding: 32px 36px; margin-top: 22px; }
+  .read .h { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 24px; color: #1E2820; }
+  .read .p { font-weight: 300; font-size: 15px; line-height: 1.8; color: #3E4D3B; margin-top: 12px; }
+  .read .act { margin-top: 20px; padding: 18px 20px; background: #fff; border-left: 3px solid #A98E5F; }
+  .read .act .k { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #A98E5F; }
+  .read .act .t { font-weight: 300; font-size: 14.5px; line-height: 1.7; color: #2E3D30; margin-top: 7px; }
+  .capture { margin-top: 22px; background: #1E2820; border-radius: 2px; padding: 34px 40px; }
+  .capture .k { font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: #A8B8A0; }
+  .capture .h { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 25px; line-height: 1.3; color: #F5F0E8; margin-top: 12px; }
+  .capture .h em { font-style: italic; color: #D8C49A; }
+  .capture .p { font-weight: 300; font-size: 14px; line-height: 1.7; color: rgba(245,240,232,0.78); margin-top: 10px; max-width: 480px; }
+  .capture .form { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+  .capture input { flex: 1; min-width: 220px; background: #fff; border: 1px solid #D8C49A; padding: 15px 16px; font-weight: 300; font-size: 15px; color: #1E2820; outline: none; border-radius: 2px; }
+  .capture .send { border: none; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; padding: 15px 26px; border-radius: 2px; cursor: pointer; background: #D8C49A; color: #1E2820; }
+  .booking { margin-top: 22px; background: #5C7A5C; border-radius: 2px; padding: 30px 40px; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+  .booking .h { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 23px; line-height: 1.35; color: #F5F0E8; max-width: 420px; }
+  .booking .h em { font-style: italic; color: #F5F0E8; text-decoration: underline; text-underline-offset: 3px; }
+  .booking .lnk { display: inline-flex; align-items: center; gap: 10px; background: #F5F0E8; color: #1E2820; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; padding: 15px 26px; text-decoration: none; white-space: nowrap; }
+  .footrow { display: flex; align-items: center; gap: 16px; margin-top: 22px; flex-wrap: wrap; }
+  .retake { background: transparent; border: 1px solid #C9C3B5; color: #5B6B58; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; padding: 11px 22px; cursor: pointer; border-radius: 2px; }
+  .retake:hover { border-color: #5C7A5C; color: #3D5C3D; }
+  .disc { font-size: 11.5px; font-weight: 300; font-style: italic; color: #8A9684; }
+  .hidden { display: none; }
+  @media (max-width: 620px) {
+    .ca-body { padding: 32px 22px 40px; }
+    .ca-head { padding: 22px; }
+    .legend, .qrow { grid-template-columns: 1fr repeat(4, 38px); gap: 6px; }
+    .opt { width: 34px; height: 34px; font-size: 13px; }
+    .ca-h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="ca-wrap">
+  <div class="ca-head">
+    <a class="ca-logo" href="../">Calm Ambition</a>
+    <span class="ca-tag">The Energy Audit</span>
+  </div>
+  <div class="ca-body">
+    <div class="ca-h1">Where is your week actually draining you?</div>
+    <div class="ca-sub">Energy isn't one tank. It runs down across four areas, and most people are only watching one. Answer twelve quick statements for an honest read on where yours is leaking, and what to do first. Two minutes.</div>
+
+    <div class="legend">
+      <div></div>
+      <div class="lab"><div class="w">Rarely</div><div class="n">0</div></div>
+      <div class="lab"><div class="w">Some-<br>times</div><div class="n">1</div></div>
+      <div class="lab"><div class="w">Often</div><div class="n">2</div></div>
+      <div class="lab"><div class="w">Almost<br>always</div><div class="n">3</div></div>
+    </div>
+
+    <div id="questions"></div>
+
+    <div class="prog">
+      <div class="bar"><div class="fill" id="progFill"></div></div>
+      <div class="lab" id="progLab">0 of 12 answered</div>
+    </div>
+
+    <div style="margin-top: 32px;">
+      <button class="cta-btn" id="seeBtn" disabled>See where you stand →</button>
+    </div>
+
+    <div class="result hidden" id="result"></div>
+  </div>
+</div>
+
+<script>
+const PILLARS = [
+  {
+    key: 'physical', name: 'Physical', tint: '#5C7A5C',
+    questions: [
+      "I wake up tired even after a full night's sleep.",
+      "I run on caffeine, sugar, or willpower to get through the day.",
+      "I've let movement, rest, or proper meals slide to keep up."
+    ],
+    lead: "Your body is absorbing the cost first.",
+    read: "Tiredness, stimulants, and skipped basics are early warning signs worth listening to. When the body runs low, everything else gets harder to do. This area responds fast: protect sleep and put real fuel back in, and the rest of you has something to work with.",
+    actK: "Try this week",
+    act: "Pick one non-negotiable anchor, a consistent wake time, a real lunch away from your desk, or a ten-minute walk, and hold it for five days straight."
+  },
+  {
+    key: 'mental', name: 'Mental', tint: '#5C7A5C',
+    questions: [
+      "My mind won't switch off, even when I want it to.",
+      "I find it hard to focus or finish things that used to feel easy.",
+      "I feel mentally full before the day has properly started."
+    ],
+    lead: "Your mind never gets to clock off.",
+    read: "The constant background processing wears you down more than the work itself. A brain that's always on has no room left to think clearly. The shift is building real edges around thinking time, so your attention has somewhere to land and somewhere to stop.",
+    actK: "Try this week",
+    act: "Build one hard stop. Choose a time you close the laptop, write tomorrow's top three on paper, and leave the rest on the page instead of in your head."
+  },
+  {
+    key: 'emotional', name: 'Emotional', tint: '#A98E5F',
+    questions: [
+      "I'm more irritable, flat, or cynical than I used to be.",
+      "I carry a low-level resentment about how full my life is.",
+      "Things that should feel good barely register."
+    ],
+    lead: "The drain is showing in how you feel and relate.",
+    read: "Irritability and flatness are signals that your reserves are low. They don't mean something is wrong with you. This area responds to honesty and connection rather than more effort. The people around you feel it before you name it, so naming it is where the relief starts.",
+    actK: "Try this week",
+    act: "Name one thing you resent right now and say it out loud to someone you trust. Said out loud, it tends to get smaller."
+  },
+  {
+    key: 'purpose', name: 'Purpose', tint: '#A98E5F',
+    questions: [
+      "Work that used to light me up feels like going through the motions.",
+      "I'm busy, but I'm not sure it's adding up to anything that matters.",
+      "I keep pushing now and telling myself life starts later."
+    ],
+    lead: "You're running hard on something that stopped feeling like yours.",
+    read: "When the why fades, every task costs more. You can be capable and still disconnected from what you're working toward. The work here is reconnecting your effort to something that matters to you, so the same days take less out of you.",
+    actK: "Try this week",
+    act: "Ask yourself what you're actually optimising for right now and write one honest sentence. If you can't finish it, that's the conversation worth having."
+  }
+];
+
+const flat = [];
+PILLARS.forEach((p, pi) => p.questions.forEach((q, qi) => flat.push({ pi, qi, text: q })));
+const answers = new Array(flat.length).fill(null);
+
+const qWrap = document.getElementById('questions');
+let n = 0;
+PILLARS.forEach((p, pi) => {
+  const head = document.createElement('div');
+  head.className = 'pillar-head';
+  head.innerHTML = '<span class="num">0' + (pi + 1) + '</span><span class="ttl">' + p.name + ' energy</span><span class="rule"></span>';
+  qWrap.appendChild(head);
+  p.questions.forEach((q, qi) => {
+    const idx = n++;
+    const row = document.createElement('div');
+    row.className = 'qrow';
+    const t = document.createElement('div');
+    t.className = 'qtext';
+    t.textContent = q;
+    row.appendChild(t);
+    [0, 1, 2, 3].forEach(v => {
+      const b = document.createElement('button');
+      b.className = 'opt';
+      b.type = 'button';
+      b.textContent = v;
+      b.addEventListener('click', () => {
+        answers[idx] = v;
+        row.querySelectorAll('.opt').forEach(o => o.classList.remove('sel'));
+        b.classList.add('sel');
+        update();
+      });
+      row.appendChild(b);
+    });
+    qWrap.appendChild(row);
+  });
+});
+
+const progFill = document.getElementById('progFill');
+const progLab = document.getElementById('progLab');
+const seeBtn = document.getElementById('seeBtn');
+const resultEl = document.getElementById('result');
+
+function answeredCount() { return answers.filter(a => a !== null).length; }
+function allAnswered() { return answeredCount() === flat.length; }
+
+function update() {
+  const c = answeredCount();
+  progFill.style.width = (c / flat.length * 100) + '%';
+  progLab.textContent = c + ' of ' + flat.length + ' answered';
+  seeBtn.disabled = !allAnswered();
+}
+
+function pillarScores() {
+  return PILLARS.map((p, pi) => {
+    let s = 0;
+    flat.forEach((f, i) => { if (f.pi === pi) s += (answers[i] || 0); });
+    return { pillar: p, score: s, pct: Math.round(s / 9 * 100) };
+  });
+}
+
+function levelLabel(pct) {
+  if (pct <= 33) return 'Holding';
+  if (pct <= 66) return 'Strained';
+  return 'Draining';
+}
+
+seeBtn.addEventListener('click', () => {
+  const scores = pillarScores().slice().sort((a, b) => b.score - a.score);
+  const top = scores[0];
+  let bars = '';
+  scores.forEach(s => {
+    const lead = s === top;
+    const color = lead ? '#A98E5F' : '#5C7A5C';
+    bars += '<div class="barrow"><div class="top"><span class="nm">' + s.pillar.name +
+      (lead ? '  ·  most drained' : '') + '</span><span class="lv">' + levelLabel(s.pct) +
+      '</span></div><div class="track"><div class="meter" style="background:' + color +
+      '" data-w="' + s.pct + '"></div></div></div>';
+  });
+
+  resultEl.innerHTML =
+    '<div class="res-bars">' +
+      '<div class="res-kicker">Your energy map</div>' +
+      '<div class="res-lead">' + top.pillar.lead + '</div>' +
+      bars +
+    '</div>' +
+    '<div class="read">' +
+      '<div class="h">' + top.pillar.name + ' energy is where to start</div>' +
+      '<div class="p">' + top.pillar.read + '</div>' +
+      '<div class="act"><div class="k">' + top.pillar.actK + '</div><div class="t">' + top.pillar.act + '</div></div>' +
+    '</div>' +
+    '<div class="capture">' +
+      '<div class="k">Go deeper</div>' +
+      '<div class="h">Get your full energy map <em>plus the matching reset.</em></div>' +
+      '<div class="p">Enter your email and I\'ll send your results across all four areas, with a short reset guide for the one that\'s draining you most.</div>' +
+      '<div class="form"><input type="email" id="email" placeholder="you@example.com"><button class="send" id="sendBtn">Send me my reset →</button></div>' +
+    '</div>' +
+    '<div class="booking">' +
+      '<div class="h">Want a clearer read? <em>Apply for a free discovery call.</em></div>' +
+      '<a class="lnk" href="../../index.html#contact">Apply for a call →</a>' +
+    '</div>' +
+    '<div class="footrow">' +
+      '<button class="retake" id="retake">↺ Take it again</button>' +
+      '<span class="disc">A reflection tool, not a diagnosis. If you\'re struggling, reach out to your GP or Lifeline 13 11 14.</span>' +
+    '</div>';
+
+  resultEl.classList.remove('hidden');
+  seeBtn.classList.add('hidden');
+  requestAnimationFrame(() => {
+    resultEl.querySelectorAll('.meter').forEach(m => { m.style.width = m.getAttribute('data-w') + '%'; });
+  });
+  resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const email = (document.getElementById('email').value || '').trim();
+    if (/.+@.+\..+/.test(email)) {
+      document.querySelector('.capture').innerHTML =
+        '<div class="k">Thank you</div><div class="h">Your reset is on its way to <em>' + email + '</em>.</div>' +
+        '<div class="p">Check your inbox in the next few minutes. If it\'s not there, look in promotions or spam.</div>';
+    } else {
+      document.getElementById('email').focus();
+      document.getElementById('email').style.borderColor = '#A98E5F';
+    }
+  });
+
+  document.getElementById('retake').addEventListener('click', () => {
+    for (let i = 0; i < answers.length; i++) answers[i] = null;
+    qWrap.querySelectorAll('.opt').forEach(o => o.classList.remove('sel'));
+    resultEl.classList.add('hidden');
+    resultEl.innerHTML = '';
+    seeBtn.classList.remove('hidden');
+    update();
+    document.querySelector('.ca-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
