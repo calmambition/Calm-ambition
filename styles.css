@@ -158,7 +158,7 @@ section { position: relative; }
 .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
 .section-label { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent-text); margin-bottom: 1rem; display: block; }
 .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.5vw, 3.8rem); font-weight: 400; line-height: 1.15; color: var(--dark); }
-.section-title em { font-style: italic; color: var(--accent); }
+.section-title em { font-style: italic; color: var(--accent-text); }
 .divider { width: 48px; height: 1px; background: var(--stone); margin: 2rem 0; }
 
 #about { padding: 8rem 0; background: var(--warm-white); }
@@ -288,6 +288,13 @@ a.ca-logo:hover, a.ca-monogram:hover { opacity: 0.72; transition: opacity 0.25s 
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+/* Fail-safe: if JS never runs (search/social crawlers, no-JS, throttled renders),
+   show all scroll-revealed content instead of leaving it at opacity:0. The .js class
+   is set on <html> in the head; with JS present the original hide/reveal applies. */
+html:not(.js) .reveal,
+html:not(.js) .road-step,
+html:not(.js) .road-outcome,
+html:not(.js) .roads-reframe { opacity: 1 !important; transform: none !important; }
 
 .roads-toggle { display: inline-flex; border: 1px solid rgba(184,206,180,0.2); margin-bottom: 2.5rem; position: relative; overflow: hidden; }
 .toggle-btn { font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.85rem 2rem; background: transparent; color: var(--stone); border: none; cursor: pointer; transition: color 0.3s; position: relative; z-index: 1; white-space: nowrap; }
