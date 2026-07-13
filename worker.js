@@ -4,49 +4,54 @@
  */
 
 const SCALE_QUESTIONS = [
-  { dim: "Exhaustion", text: "By the end of a workday, I have nothing left for the people or things I care about." },
-  { dim: "Exhaustion", text: "I wake up tired, even after a full night's sleep." },
-  { dim: "Exhaustion", text: "When Sunday comes around, I feel a sense of dread about the week ahead.", scale: ["Rarely", "Sometimes", "Often", "Most weeks", "Every week"] },
-  { dim: "Detachment", text: "I catch myself going through the motions on work I used to care about." },
-  { dim: "Detachment", text: "I'm more cynical or irritable with colleagues and clients than I'd like to be." },
-  { dim: "Detachment", text: "I've started keeping people at work at arm's length." },
-  { dim: "Efficacy", text: "I doubt whether my work is actually making a difference." },
-  { dim: "Efficacy", text: "Tasks that used to feel easy now take real effort to start or finish." },
-  { dim: "Efficacy", text: "I finish most days feeling like I accomplished very little." },
+  { dim: "Body", text: "I wake up tired, even after a full night's sleep." },
+  { dim: "Body", text: "I'm running on caffeine, sugar, or a drink to get through the day." },
+  { dim: "Body", text: "I'm carrying tension I can feel: jaw, shoulders, gut, or headaches." },
+  { dim: "Mind", text: "I can't switch off, even when there's nothing I need to do." },
+  { dim: "Mind", text: "I'm scattered or forgetful, rereading the same thing to take it in." },
+  { dim: "Mind", text: "I replay conversations or mistakes on a loop." },
+  { dim: "Drive", text: "Work that used to energise me now feels flat." },
+  { dim: "Drive", text: "I'm more cynical or short-tempered about things I used to care about." },
+  { dim: "Drive", text: "I doubt I'm doing a good enough job, even when the results say otherwise." },
+  { dim: "Life", text: "I cancel on friends, exercise, or rest to keep up with work." },
+  { dim: "Life", text: "My relationships are getting the leftovers of my energy." },
+  { dim: "Life", text: "I can't remember the last time I felt genuinely calm." },
 ];
 
 const SCALE = ["Rarely", "Sometimes", "Often", "Most days", "Every day"];
 
 const INTERVENTION_LIBRARY = `When writing "firstSteps", choose exactly three actions from the library below. Selection rules:
-- Weight your choices toward the one or two dimensions with the highest averages.
+- Weight your choices toward the one or two pillars with the highest averages.
 - Adapt the wording to the person's own context from their free-text answers (their role, their named pressures, their words). Keep each to one sentence.
 - Never select two actions from the same cluster.
-- If all three dimension averages are 3.0 or above, one of the three actions MUST be the "heavy load" action, listed last.
+- If all four pillar averages are 3.0 or above, one of the three actions MUST be the "heavy load" action, listed last.
 - These are starting experiments, not fixes. Frame them as two-week trials.
 
-### Energy cluster (recovery and nervous system downshift)
+### Body cluster (recovery and nervous system downshift)
 1. Pick one evening this week with a hard finish time, put it in your calendar like a client meeting, and leave the laptop closed after it.
-2. Before you walk in the front door each evening, sit in the car or pause outside for ninety seconds of slow breathing with a long exhale, so your body gets the signal that work mode is over.
-3. Anchor your wake time: same time every morning for the next fortnight, weekends included, and let bedtime sort itself out.
-4. Take one ten-minute walk outside between meetings each day, no phone, no podcast, just movement and daylight.
-5. Audit one evening this week for fake recovery: scrolling and background TV keep your stress system idling, so swap thirty minutes of it for anything that actually slows you down, reading, cooking, stretching, talking.
-6. Move your caffeine cutoff to midday for two weeks and pay attention to what your evenings and sleep do in response.
+2. Anchor your wake time: same time every morning for the next fortnight, weekends included, and let bedtime sort itself out.
+3. Take one ten-minute walk outside between meetings each day, no phone, no podcast, just movement and daylight.
+4. Move your caffeine cutoff to midday for two weeks and pay attention to what your evenings and sleep do in response.
 
-### Connection cluster (re-engagement and boundaries)
-7. Book one fifteen-minute conversation this week with a colleague you actually like, no agenda, no work problem to solve.
-8. Next time you feel yourself checking out in a meeting, write down the exact sentence running through your head; cynicism loses grip once you can see the script.
-9. Protect thirty minutes this week for the one part of your role you still genuinely care about, and treat that time as non-negotiable.
-10. Decline or delegate one meeting this fortnight with a single-line reason and no apology attached.
-11. Tell one trusted person at work, in plain words, that you are running close to the edge; secrecy is part of what keeps the pattern in place.
+### Mind cluster (mental offload and focus)
+5. Build one hard stop each evening: write tomorrow's top three on paper, then leave the rest on the page instead of carrying it in your head.
+6. When a worry keeps looping, set a fifteen-minute window later in the day to think about it on purpose, and park it until then.
+7. Protect one ninety-minute block before midday this week with notifications off and the door closed, and notice what your focus does.
+8. Give your evenings a screen-free wind-down for the last thirty minutes before bed, so your mind has somewhere to land.
 
-### Impact cluster (efficacy and evidence)
-12. End each workday by writing three lines on what actually moved forward, however small; your sense of accomplishing nothing is a distortion worth testing against evidence.
-13. Take the task you keep avoiding and shrink it to a fifteen-minute first move, then stop there; momentum matters more than completion right now.
-14. Block one ninety-minute deep work session before midday this week, notifications off, door closed, and notice how it changes the rest of the day.
-15. Ask one colleague you trust what they have seen you do well lately, and write the answer down somewhere you will see it again.
-16. Find one recurring task that produces nothing anyone uses, and kill it or hand it off this fortnight.
+### Drive cluster (re-engagement, efficacy and evidence)
+9. End each workday by writing three lines on what actually moved forward, however small; a sense of accomplishing nothing is worth testing against evidence.
+10. Protect thirty minutes this week for the one part of your role you still care about, and treat that time as non-negotiable.
+11. Take the task you keep avoiding and shrink it to a fifteen-minute first move, then stop there; momentum matters more than completion right now.
+12. Ask one colleague you trust what they have seen you do well lately, and write the answer down somewhere you will see it again.
 
-### Heavy load action (mandatory when all dimensions average 3.0+)
+### Life cluster (boundaries and the people around you)
+13. Put one thing you keep cancelling back in the calendar this fortnight, a friend, exercise, or rest, and hold it like any other commitment.
+14. Decline or delegate one meeting this fortnight with a single-line reason and no apology attached.
+15. Tell one trusted person, in plain words, that you are running close to the edge; secrecy is part of what keeps the pattern in place.
+16. Block one evening this week that belongs to someone you care about, with your phone in another room.
+
+### Heavy load action (mandatory when all pillars average 3.0+)
 17. The signals across your answers are loud enough that the most useful next step is a conversation, not a tactic: book time with your GP this fortnight, and consider what you could put down at work while you rebuild.`;
 
 function dimensionScores(answers) {
@@ -86,13 +91,15 @@ Write like a real coach speaking to one person across a table. Senior profession
 - Do not give abstract nouns human actions. Never write "depletion meeting a crisis of meaning", "the signals point to", "the exhaustion tells you". A person feels, notices and does things. Name them: "you", "your week", "your body".
 - No aphorisms or pull-quote lines like "worth holding onto as a signal of what's still intact". If a sentence sounds like a poster, rewrite it as a flat observation.
 - Vary sentence length. Do not stack short punchy fragments. Do not end every paragraph on a tidy line.
-- Be specific. Point at their actual answers (the Sunday dread, the late nights with senior leaders, the task they keep avoiding), not vague "your nervous system" abstractions.
+- Be specific. Point at their actual answers (the broken sleep, the looping thoughts, the friend they keep cancelling on), not vague "your nervous system" abstractions.
 - Plain Australian English a tired professional reads in one pass. No therapy-speak, no corporate jargon, no toxic positivity.
 
 Their self-check responses (frequency scale: Rarely, Sometimes, Often, Most days, Every day):
 ${detail}
 
-Dimension averages (0 to 4 scale): ${JSON.stringify(scores)}
+Pillar averages (0 to 4 scale): ${JSON.stringify(scores)}
+
+The four pillars are Body (physical energy, sleep, tension), Mind (mental noise, focus, rumination), Drive (motivation, cynicism, self-doubt about work), and Life (boundaries, relationships, room to rest).
 
 Their words, in response to "a recent moment when work felt heaviest":
 "${freeText.moment || "(left blank)"}"
@@ -102,15 +109,16 @@ Their words, in response to "what sustainable would look like in six months":
 
 ${INTERVENTION_LIBRARY}
 
-Use the exact level words shown for each dimension. For Connection, the healthy level is "Connected", never "Engaged".
+Use the exact level words shown for each pillar.
 
 Respond with ONLY a valid JSON object, no markdown fences, no preamble, in exactly this shape:
 {
   "headline": "A short headline in plain spoken words (max 10 words). No colon constructions, no 'X, not Y' formula, no abstract nouns like depletion or crisis.",
   "dimensions": [
-    {"name": "Energy", "level": "Steady" | "Strained" | "Running on empty", "reflection": "2 sentences about their exhaustion answers, spoken to them. Point at what they actually said. No adverbs, no 'not X but Y', no aphorisms."},
-    {"name": "Connection", "level": "Connected" | "Pulling back" | "Checked out", "reflection": "2 sentences about their detachment answers, same rules."},
-    {"name": "Impact", "level": "Confident" | "Wavering" | "Doubting", "reflection": "2 sentences about their efficacy answers, same rules."}
+    {"name": "Body", "level": "Steady" | "Strained" | "Running on empty", "reflection": "2 sentences about their Body answers (sleep, energy, tension), spoken to them. Point at what they actually said. No adverbs, no 'not X but Y', no aphorisms."},
+    {"name": "Mind", "level": "Clear" | "Crowded" | "Overloaded", "reflection": "2 sentences about their Mind answers (switching off, focus, looping thoughts), same rules."},
+    {"name": "Drive", "level": "Engaged" | "Flagging" | "Depleted", "reflection": "2 sentences about their Drive answers (flat about work, cynicism, self-doubt), same rules."},
+    {"name": "Life", "level": "Grounded" | "Fraying" | "Overrun", "reflection": "2 sentences about their Life answers (cancelling on people, relationships, room to rest), same rules."}
   ],
   "pattern": "One paragraph (3-4 sentences) said the way you would say it to them, connecting what they reported. Quote at least one phrase they actually wrote. Do not open with 'The pattern is', 'What stands out', or 'The disconnect'. No abstract nouns doing the acting.",
   "firstSteps": ["Three specific, small actions for the next two weeks. Each one sentence, concrete, tied to their situation, not generic wellness advice."],
@@ -327,8 +335,8 @@ export default {
     if (path.endsWith("/readout")) {
       const { answers, freeText } = body;
 
-      if (!Array.isArray(answers) || answers.length !== 9) {
-        return jsonResponse({ error: "answers must be array of 9 integers" }, 400, origin);
+      if (!Array.isArray(answers) || answers.length !== 12) {
+        return jsonResponse({ error: "answers must be array of 12 integers" }, 400, origin);
       }
       if (!answers.every((a) => Number.isInteger(a) && a >= 0 && a <= 4)) {
         return jsonResponse({ error: "answers must be 0-4" }, 400, origin);

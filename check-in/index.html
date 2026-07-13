@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Free burnout self-assessment for high-performing professionals. Get personalized insights in under 5 minutes.">
 <meta property="og:title" content="Burnout Check-In | Calm Ambition">
-<meta property="og:description" content="Eleven questions to understand where your energy, engagement, and sense of impact sit right now.">
+<meta property="og:description" content="Fourteen questions to understand where your body, mind, drive and life sit right now.">
 <meta property="og:image" content="https://calmambition.github.io/Calm-ambition/images/logo/logo-lockup-dark-1600x900.png">
 <title>Burnout Check-In | Calm Ambition</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -546,7 +546,7 @@ button.btn-error {
     <!-- Intro State -->
     <div class="state active" id="intro">
       <h1 class="intro h1">How sustainable is the way you're working?</h1>
-      <p class="intro-desc">Eleven questions. About four minutes. You'll get a personalised readout of where your energy, engagement and sense of impact sit right now, in plain language, with three small things to try.</p>
+      <p class="intro-desc">Fourteen questions. About four minutes. You'll get a personalised readout of where your body, mind, drive and life sit right now, in plain language, with three small things to try.</p>
       <p class="intro-note">This is a self-reflection tool, not a clinical assessment or diagnosis. Your answers aren't stored.</p>
       <button class="btn-primary" onclick="startQuiz()">Begin</button>
     </div>
@@ -556,7 +556,7 @@ button.btn-error {
       <div class="progress-bar">
         <div class="progress-fill" id="progressFill"></div>
       </div>
-      <div class="progress-label" id="progressLabel">1 / 11</div>
+      <div class="progress-label" id="progressLabel">1 / 14</div>
       <div class="question-wrapper" id="questionContent"></div>
       <button class="btn-back" id="backBtn" onclick="goBack()" style="display:none;">← Back</button>
     </div>
@@ -595,15 +595,18 @@ button.btn-error {
 <script>
 // Data
 const SCALE_QUESTIONS = [
-  { dim: "Exhaustion", text: "By the end of a workday, I have nothing left for the people or things I care about." },
-  { dim: "Exhaustion", text: "I wake up tired, even after a full night's sleep." },
-  { dim: "Exhaustion", text: "I feel a sense of dread before the week even starts." },
-  { dim: "Detachment", text: "I catch myself going through the motions on work I used to care about." },
-  { dim: "Detachment", text: "I'm more cynical or irritable with colleagues and clients than I'd like to be." },
-  { dim: "Detachment", text: "I've started keeping people at work at arm's length." },
-  { dim: "Efficacy", text: "I doubt whether my work is actually making a difference." },
-  { dim: "Efficacy", text: "Tasks that used to feel easy now take real effort to start or finish." },
-  { dim: "Efficacy", text: "I finish most days feeling like I accomplished very little." },
+  { dim: "Body", text: "I wake up tired, even after a full night's sleep." },
+  { dim: "Body", text: "I'm running on caffeine, sugar, or a drink to get through the day." },
+  { dim: "Body", text: "I'm carrying tension I can feel: jaw, shoulders, gut, or headaches." },
+  { dim: "Mind", text: "I can't switch off, even when there's nothing I need to do." },
+  { dim: "Mind", text: "I'm scattered or forgetful, rereading the same thing to take it in." },
+  { dim: "Mind", text: "I replay conversations or mistakes on a loop." },
+  { dim: "Drive", text: "Work that used to energise me now feels flat." },
+  { dim: "Drive", text: "I'm more cynical or short-tempered about things I used to care about." },
+  { dim: "Drive", text: "I doubt I'm doing a good enough job, even when the results say otherwise." },
+  { dim: "Life", text: "I cancel on friends, exercise, or rest to keep up with work." },
+  { dim: "Life", text: "My relationships are getting the leftovers of my energy." },
+  { dim: "Life", text: "I can't remember the last time I felt genuinely calm." },
 ];
 
 const FREE_TEXT = [
@@ -756,8 +759,9 @@ function displayReadout() {
   html += '<div class="dimensions-section">';
   const levelMap = {
     'Steady': '', 'Strained': 'strained', 'Running on empty': 'depleted',
-    'Engaged': '', 'Pulling back': 'strained', 'Checked out': 'depleted',
-    'Confident': '', 'Wavering': 'strained', 'Doubting': 'depleted'
+    'Clear': '', 'Crowded': 'strained', 'Overloaded': 'depleted',
+    'Engaged': '', 'Flagging': 'strained', 'Depleted': 'depleted',
+    'Grounded': '', 'Fraying': 'strained', 'Overrun': 'depleted'
   };
 
   r.dimensions.forEach(d => {

@@ -136,7 +136,7 @@
 <script>
 const PILLARS = [
   {
-    key: 'physical', name: 'Physical', tint: '#5C7A5C',
+    key: 'body', name: 'Body', tint: '#5C7A5C',
     questions: [
       "I wake up tired even after a full night's sleep.",
       "I run on caffeine, sugar, or willpower to get through the day.",
@@ -148,7 +148,7 @@ const PILLARS = [
     act: "Pick one non-negotiable anchor, a consistent wake time, a real lunch away from your desk, or a ten-minute walk, and hold it for five days straight."
   },
   {
-    key: 'mental', name: 'Mental', tint: '#5C7A5C',
+    key: 'mind', name: 'Mind', tint: '#5C7A5C',
     questions: [
       "My mind won't switch off, even when I want it to.",
       "I find it hard to focus or finish things that used to feel easy.",
@@ -160,19 +160,7 @@ const PILLARS = [
     act: "Build one hard stop. Choose a time you close the laptop, write tomorrow's top three on paper, and leave the rest on the page instead of in your head."
   },
   {
-    key: 'emotional', name: 'Emotional', tint: '#A98E5F',
-    questions: [
-      "I'm more irritable, flat, or cynical than I used to be.",
-      "I carry a low-level resentment about how full my life is.",
-      "Things that should feel good barely register."
-    ],
-    lead: "The drain is showing in how you feel and relate.",
-    read: "Irritability and flatness are signals that your reserves are low. They don't mean something is wrong with you. This area responds to honesty and connection rather than more effort. The people around you feel it before you name it, so naming it is where the relief starts.",
-    actK: "Try this week",
-    act: "Name one thing you resent right now and say it out loud to someone you trust. Said out loud, it tends to get smaller."
-  },
-  {
-    key: 'purpose', name: 'Purpose', tint: '#A98E5F',
+    key: 'drive', name: 'Drive', tint: '#A98E5F',
     questions: [
       "Work that used to light me up feels like going through the motions.",
       "I'm busy, but I'm not sure it's adding up to anything that matters.",
@@ -182,6 +170,18 @@ const PILLARS = [
     read: "When the why fades, every task costs more. You can be capable and still disconnected from what you're working toward. The work here is reconnecting your effort to something that matters to you, so the same days take less out of you.",
     actK: "Try this week",
     act: "Ask yourself what you're actually optimising for right now and write one honest sentence. If you can't finish it, that's the conversation worth having."
+  },
+  {
+    key: 'life', name: 'Life', tint: '#A98E5F',
+    questions: [
+      "I cancel on friends, exercise, or rest to keep up with work.",
+      "The people close to me get the leftovers of my energy.",
+      "I feel guilty resting and guilty working, so no setting feels right."
+    ],
+    lead: "The people and plans outside work keep getting cut first.",
+    read: "When work takes the first slice of your time, whatever restores you gets the leftovers. That is the part that erodes without you noticing. This area steadies when you put one or two things you keep dropping back in the week and hold them like anything else that matters.",
+    actK: "Try this week",
+    act: "Put one thing you keep cancelling back in the diary this week, a friend, a walk, an early night, and hold it as firmly as any meeting."
   }
 ];
 
@@ -194,7 +194,7 @@ let n = 0;
 PILLARS.forEach((p, pi) => {
   const head = document.createElement('div');
   head.className = 'pillar-head';
-  head.innerHTML = '<span class="num">0' + (pi + 1) + '</span><span class="ttl">' + p.name + ' energy</span><span class="rule"></span>';
+  head.innerHTML = '<span class="num">0' + (pi + 1) + '</span><span class="ttl">' + p.name + '</span><span class="rule"></span>';
   qWrap.appendChild(head);
   p.questions.forEach((q, qi) => {
     const idx = n++;
@@ -270,7 +270,7 @@ seeBtn.addEventListener('click', () => {
       bars +
     '</div>' +
     '<div class="read">' +
-      '<div class="h">' + top.pillar.name + ' energy is where to start</div>' +
+      '<div class="h">' + top.pillar.name + ' is where to start</div>' +
       '<div class="p">' + top.pillar.read + '</div>' +
       '<div class="act"><div class="k">' + top.pillar.actK + '</div><div class="t">' + top.pillar.act + '</div></div>' +
     '</div>' +
