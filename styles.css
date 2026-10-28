@@ -242,6 +242,9 @@ footer { background: var(--dark); padding: 3rem 4rem; display: flex; justify-con
 .footer-logo { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1rem; letter-spacing: 0.26em; text-indent: 0.26em; text-transform: uppercase; line-height: 1; color: var(--cream); }
 .footer-tagline { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--stone); }
 .footer-copy { font-size: 0.7rem; color: rgba(168,184,160,0.5); letter-spacing: 0.08em; }
+.footer-copy a { color: inherit; text-decoration: underline; text-underline-offset: 3px; margin-left: 0.6rem; }
+.form-privacy { font-size: 0.78rem; color: var(--stone); line-height: 1.6; font-weight: 300; }
+.form-privacy a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 
 /* ——— Maison full lockup: hairline / wordmark / hairline (hero, ceremonial moments) ——— */
 .ca-logo {

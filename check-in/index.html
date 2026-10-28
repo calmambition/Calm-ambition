@@ -327,6 +327,7 @@ textarea.freetext:focus {
   opacity: 0.9;
 }
 
+.intro-note a, .email-gate small a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .email-gate small {
   font-size: 12px;
   color: #A8B8A0;
@@ -547,7 +548,7 @@ button.btn-error {
     <div class="state active" id="intro">
       <h1 class="intro h1">How sustainable is the way you're working?</h1>
       <p class="intro-desc">Fourteen questions. About four minutes. You'll get a personalised readout of where your body, mind, drive and life sit right now, in plain language, with three small things to try.</p>
-      <p class="intro-note">This is a self-reflection tool, not a clinical assessment or diagnosis. Your answers aren't stored.</p>
+      <p class="intro-note">This is a self-reflection tool, not a clinical assessment or diagnosis. Your answers go to an AI service that writes your readout, and Calm Ambition doesn't save them. By starting, you consent to that. <a href="../privacy.html#check-in">How your answers are handled</a></p>
       <button class="btn-primary" onclick="startQuiz()">Begin</button>
     </div>
 
@@ -577,7 +578,7 @@ button.btn-error {
           <input type="email" id="emailInput" placeholder="your@email.com" required>
           <button type="submit" id="emailSubmitBtn">Send My Readout</button>
         </form>
-        <small>No spam. One email with your results and next steps. That's it.</small>
+        <small>No spam. You get one email with your readout. I also receive a copy of your email address and readout, so I know who has taken the check-in, and I delete it after 12 months. <a href="../privacy.html#check-in">Privacy policy</a></small>
       </div>
     </div>
 
