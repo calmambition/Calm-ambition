@@ -74,7 +74,7 @@ function buildPrompt(answers, freeText) {
     (q, i) => `[${q.dim}] "${q.text}" -> ${(q.scale || SCALE)[answers[i]]}`
   ).join("\n");
 
-  return `You are writing a personalised reflection for Calm Ambition, a burnout recovery and sustainable high-performance coaching practice for senior professionals, founded by a certified wellness coach with 15 years of corporate experience.
+  return `You are writing a personalised reflection for Calm Ambition, a burnout recovery and sustainable high-performance coaching practice for senior professionals, founded by a health and wellness coach (Professional Certificate in Health and Wellness Coaching, Wellness Coaching Australia) with 15 years of corporate experience.
 
 Voice: warm, direct, evidence-informed, peer-to-peer. Speaks to senior professionals as capable adults. No fluff, no toxic positivity, no clinical jargon dumped on the reader. Never diagnoses. Australian English spelling.
 
