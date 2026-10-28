@@ -327,6 +327,19 @@ textarea.freetext:focus {
   opacity: 0.9;
 }
 
+.skip-email {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 4px 0 16px;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  color: var(--charcoal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
 .intro-note a, .email-gate small a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .email-gate small {
   font-size: 12px;
@@ -573,12 +586,13 @@ button.btn-error {
     <div class="state" id="emailGate" style="padding-top:56px;">
       <div class="email-gate">
         <h2>Your results are ready.</h2>
-        <p>Enter your email to see what your score means and receive your personalised readout.</p>
+        <p>Enter your email and I'll send you a copy of your personalised readout. Or skip this and read it here.</p>
         <form class="email-form" onsubmit="submitEmail(event)">
           <input type="email" id="emailInput" placeholder="your@email.com" required>
           <button type="submit" id="emailSubmitBtn">Send My Readout</button>
         </form>
-        <small>No spam. You get one email with your readout. I also receive a copy of your email address and readout, so I know who has taken the check-in, and I delete it after 12 months. <a href="../privacy.html#check-in">Privacy policy</a></small>
+        <button type="button" class="skip-email" onclick="skipEmail()">Just show me my readout</button>
+        <small>If you enter your email: no spam, just one email with your readout. I also receive a copy of your email address and readout, so I know who has taken the check-in, and I delete it after 12 months. If you skip, your readout appears on screen only and I don't receive a copy of it. <a href="../privacy.html#check-in">Privacy policy</a></small>
       </div>
     </div>
 
@@ -747,6 +761,10 @@ async function submitEmail(event) {
 
   // Either delivery path may fail; the on-page readout is the guaranteed copy
   await Promise.allSettled([leadNotify, visitorEmail]);
+  displayReadout();
+}
+
+function skipEmail() {
   displayReadout();
 }
 
