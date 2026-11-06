@@ -98,6 +98,25 @@ Body (sleep, energy, tension), Mind (switching off, looping thoughts), Drive (cy
 - Links go in the first comment, not the post body. Many LinkedIn users believe link posts get less reach. Treat that as unproven and test it.
 - No hashtags on LinkedIn. Three on TikTok and Instagram: `#burnout #burnoutrecovery` plus `#sydney` or `#corporatelife`.
 
+### Your story: only use what's on this list
+
+Every first-person line in a post must come from here. If a script says something about you that isn't on the list, cut it or confirm it first. Add to the list as you share more.
+
+- Fifteen years in corporate roles in Toronto at KPMG, Deloitte and CIBC, with an MBA from Rotman done part-time.
+- Your work stayed immaculate while the private parts of your life came apart.
+- You were running on autopilot and couldn't switch off. You were living life in the third person, as if watching yourself.
+- Two weeks away changed nothing.
+- You realised the problem wasn't the workload. It was how you'd been running the whole time.
+- The work never slipped, so nobody asked, and you didn't ask yourself.
+- You kept expecting it to ease once the current stretch was over. There was always another stretch.
+- You stopped when you couldn't carry it any further, later than you should have.
+- Work pushed you into therapy. What came up there went well past work and took years. You needed both therapy and coaching.
+- You moved to Australia because staying meant choosing the way you always had. You planned a structured year of casual work.
+- Lockdown began a fortnight after you landed and removed the work and the plan. You got a complete stop.
+- Rebuilding taught you your capacity and where your boundaries had to sit.
+- You fell into modelling six months later by accident, and did it for six years. Measured on output, and you handled it differently.
+- Certified coach (Wellness Coaching Australia). Based in Sydney. Clients in Australia and New Zealand only.
+
 ### How to use the scripts
 
 They're word for word so you never stare at a blank page. Don't read them off a screen on camera, because it shows. Read the script aloud three times, then film it in sections, one paragraph per take, looking at the lens. Change any word that doesn't sound like you. The scripts are yours to edit; the structure (hook, middle, one CTA) is the part to keep.
@@ -113,7 +132,7 @@ Filming setup: phone at eye level, window light in front of you, quiet room, ver
 | 1 | 16 Nov | Mon | Text | Story | Six years ago I left Toronto with nothing left |
 | 2 | 18 Nov | Wed | **Video** | Story | I spent 15 years at KPMG, Deloitte and CIBC. I missed the signs. |
 | 3 | 20 Nov | Fri | Text | Recognise | "Fine. Just tired." |
-| 4 | 23 Nov | Mon | Text | Recognise | Meetings you can't remember |
+| 4 | 23 Nov | Mon | Text | Explain | Autopilot, and living in the third person |
 | 5 | 25 Nov | Wed | **Video** | Explain | Weekends don't restore you anymore |
 | 6 | 27 Nov | Fri | Text | Recognise | Two weeks off changed nothing |
 | 7 | 30 Nov | Mon | Text | Explain | Why high performers are the last to notice |
@@ -150,7 +169,7 @@ Everything inside a quote block is the exact copy. On LinkedIn, the first two li
 >
 > Fifteen years at KPMG, Deloitte and CIBC. An MBA part-time on top. My work never slipped, so nobody asked whether I was okay. I didn't ask myself either.
 >
-> By the end I was getting through meetings without being in them. Saying the right things and remembering none of it afterwards.
+> By the end I was running on autopilot. Still in every meeting, still saying the right things, but living my life in the third person, like I was watching someone else do it.
 >
 > I moved to Australia because staying meant living the same way I always had. A fortnight after I landed, the world went into lockdown. I got the one thing I'd never been able to arrange for myself: a complete stop, with nothing waiting behind it.
 >
@@ -177,7 +196,7 @@ Everything inside a quote block is the exact copy. On LinkedIn, the first two li
 >
 > My work never slipped. That's why nobody asked if I was okay. I didn't ask myself either.
 >
-> By the end I was getting through meetings without being in them. Saying the right things, remembering none of it afterwards.
+> By the end I was on autopilot. Still in every meeting, still saying the right things. But it felt like I was watching someone else live my life.
 >
 > I kept telling myself it would ease once this stretch was over. There was always another stretch.
 >
@@ -206,10 +225,10 @@ Everything inside a quote block is the exact copy. On LinkedIn, the first two li
 >
 > Here's what "just tired" was covering for me:
 >
-> - Lying awake running through tomorrow
-> - Weekends that changed nothing
-> - Things I used to enjoy going flat
-> - Cancelling on friends and calling it being busy
+> - Running on autopilot
+> - Not being able to switch off
+> - Feeling like I was watching my own life from the outside
+> - Taking two weeks off and coming back exactly the same
 >
 > Tired is what you feel after a big week. It goes away when you sleep.
 >
@@ -219,23 +238,34 @@ Everything inside a quote block is the exact copy. On LinkedIn, the first two li
 
 ---
 
-### Post 4. Monday 23 November. LinkedIn text. Recognise.
+### Post 4. Monday 23 November. LinkedIn text. Explain.
 
-> There's a stage of burnout nobody warns you about.
+> There's a stage of burnout that doesn't feel like stress.
 >
-> You're still in every meeting. You still say the right things. Your work is still good. And afterwards you can't remember a word of it.
+> It feels like autopilot.
 >
-> That was my last year in corporate. Whole days went past that I couldn't account for. Because my output never dropped, nobody had a reason to ask. I didn't give myself one either.
+> In my last years in corporate I was still doing all of it. The meetings, the deadlines, being the dependable one. But I was living my life in the third person, watching myself do it, as if it were happening to someone else.
 >
-> I kept thinking it would ease once this stretch was over. There was always another stretch.
+> Burnout research has words for two parts of this.
 >
-> If you're reading this between meetings and recognising it, two things are worth knowing.
+> The first is "mental distance". You pull back from your work without deciding to. You keep turning up, but you've stopped being in it.
 >
-> Being able to function isn't the same as being okay.
+> The second is about habit. In animal studies, months of stress weakened the part of the brain that makes deliberate choices and strengthened the part that runs routines. You keep doing what you've always done, without choosing it.
 >
-> And the fact that you're still performing is the reason nobody has noticed.
+> That's autopilot. It's convincing, because from the outside it looks exactly like coping.
 >
-> I work with people in exactly this spot. If that's you, or someone on your team, my messages are open.
+> If you've felt like a passenger in your own week, you're not imagining it. It's one of the quietest signs, and one of the easiest to miss.
+>
+> If the feeling of watching yourself from the outside is constant or frightening, raise it with your GP.
+
+**First comment:**
+
+> The habit research, explained properly: https://calmambition.github.io/Calm-ambition/blog-habit-formation-myth.html
+
+**Where the science comes from:**
+- "Mental distance" is one of four core symptoms in the Burnout Assessment Tool (Schaufeli, De Witte and Desart, 2020), alongside exhaustion and problems with thinking and emotions. It means pulling back from work psychologically.
+- The habit finding is the 2009 *Science* study by Dias-Ferreira's team on rats, already cited in your 21-day habit blog post. Keep "in animal studies" in the post, because the study used rats.
+- **Don't call this "depersonalisation".** In Maslach's burnout model that word means going cold towards the people you work with, which isn't what you mean. In psychiatry it names a clinical condition. "Autopilot" and "living in the third person" say it more accurately and don't sound like a diagnosis.
 
 ---
 
@@ -325,7 +355,7 @@ Everything inside a quote block is the exact copy. On LinkedIn, the first two li
 >
 > Then everything else stays on the page. Your brain keeps looping because it's worried you'll forget. Writing it down gives it somewhere to put it.
 >
-> It won't fix burnout. It's one small hard stop at the end of the day, and most high performers I talk to don't have one.
+> It won't fix burnout. It's one small hard stop at the end of the day, and if you don't have one now, this is an easy place to start.
 >
 > Try it for two weeks and notice what your evenings do.
 
@@ -352,8 +382,6 @@ Everything inside a quote block is the exact copy. On LinkedIn, the first two li
 > 5. Telling one person the truth isn't weakness. Keeping it secret is part of what keeps the pattern going.
 > 6. Your ambition isn't the problem. Running it with no recovery is.
 > 7. You don't have to hit a wall before you're allowed to change something.
->
-> Number 2 cost me years.
 >
 > Which one would you add?
 
@@ -471,7 +499,7 @@ Everything inside a quote block is the exact copy. On LinkedIn, the first two li
 
 > When I burnt out, I left Toronto and moved to Australia. Two weeks after I landed, the world went into lockdown.
 >
-> No job. No plan. Nothing waiting. For the first time in my adult life, I had a complete stop.
+> The work I'd lined up disappeared, and the plan for the year went with it. For the first time in my adult life, I had a complete stop.
 >
 > That's how I learned what my capacity actually was, and where my boundaries had to sit.
 >
@@ -504,6 +532,8 @@ Everything inside a quote block is the exact copy. On LinkedIn, the first two li
 > The break won't fix the pattern. It can show you how far from rested you've been.
 >
 > I'm taking my own advice and stepping away until mid-January. See you then.
+
+**Only keep the last line if you are taking the break.**
 
 ---
 
@@ -649,7 +679,7 @@ Each of these has already worked as a text post above. Film them in batch three 
 >
 > I said that for years. It's the most efficient answer in corporate life, because it's half true and nobody follows up.
 >
-> Here's what "just tired" was covering for me. I couldn't switch off at night. Things I used to enjoy went flat. I was cancelling on people and calling it being busy.
+> Here's what "just tired" was covering for me. I was running on autopilot. I couldn't switch off. And I felt like I was watching my own life from the outside.
 >
 > Tired goes away when you sleep. If yours doesn't, it might be something else.
 >
