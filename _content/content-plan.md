@@ -881,4 +881,4 @@ After post 20, keep the three best hooks, turn them into videos from the bank or
 
 ## Note: the check-in privacy claim
 
-The check-in page says "Your answers aren't stored." `submitEmail()` in `check-in/index.html` sends the person's email and the full readout to Formspree, which keeps submissions and emails them to you. The readout quotes the person's own free-text answers. Fix the wording on the page before you send traffic to it from posts 10 and 20, and cover it in the privacy policy task on the Launch Board.
+Fixed on 6 November 2026. The check-in used to say "Your answers aren't stored", but `submitEmail()` sends the readout to Formspree and your inbox. The page now says an AI model writes the readout from the answers, you don't keep the answers themselves, and you get a copy of the readout if they enter an email. The homepage line "nothing stored" became "Nothing to prepare, and nothing to score." The privacy policy on the Launch Board still needs to cover Formspree, Resend and Anthropic.
