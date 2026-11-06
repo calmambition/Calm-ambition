@@ -10,7 +10,9 @@ This folder starts with an underscore so GitHub Pages does not publish it. The r
 
 ### One platform leads. The others get reposts.
 
-Lead with **LinkedIn**. Your buyer is a mid-to-senior professional in consulting, finance or corporate, and that person spends their work hours on LinkedIn. You also have fifteen years of KPMG, Deloitte, CIBC and Rotman contacts there. They are your warmest audience on any platform, and they already know you were good at the job.
+Lead with **LinkedIn**. You can only take clients in Australia and New Zealand (insurance), and your buyer there is a mid-to-senior professional in consulting, finance or corporate. About 17 million people in Australia are on LinkedIn, roughly 61% of the population (NapoleonCat ad-audience estimate, June 2026).
+
+The catch: LinkedIn shows your posts to your own network first, and your network sits in Toronto. Until you add Australian and New Zealand connections, your posts will reach Canadians who can't hire you. Section 7 covers how to rebuild the network. Your Toronto contacts still matter as people who can introduce you to Sydney and Auckland colleagues.
 
 Film every video vertical (9:16). Post it natively to LinkedIn first, then upload the same file to TikTok and Instagram Reels. Facebook gets the Reels crosspost and nothing else for now.
 
@@ -78,7 +80,7 @@ The order builds trust on purpose: recognition first (videos 1 to 4), then expla
 >
 > I kept telling myself it would ease once this stretch was over. There was always another stretch.
 >
-> I'm Priyanka. I'm a burnout recovery coach now, and I work with people who are where I was: still delivering, with nothing left underneath.
+> I'm Priyanka. I live in Sydney now, and I'm a burnout recovery coach. I work with people across Australia and New Zealand who are where I was: still delivering, with nothing left underneath.
 >
 > If that's you, follow along. I'm going to talk about the parts nobody mentions.
 
@@ -393,21 +395,42 @@ End text posts with a question. Do not put links in the post body (put them in t
 
 That's three LinkedIn posts and two short videos a week. Batch-film four videos in one 90-minute session every second weekend so you are never filming the night before.
 
-**The 20 minutes after posting matter more than the post.** Reply to every comment. Leave five thoughtful comments on other people's posts in your niche (HR leaders, other coaches, consulting alumni) every day you post.
+**The 20 minutes after posting matter more than the post.** Reply to every comment. Leave five to ten thoughtful comments a day on posts by Australian and New Zealand voices: HR and People & Culture leaders, partners at Sydney and Auckland firms, local wellbeing people. Their audience sees your comment, and that audience is the one you can work with.
 
 ---
 
-## 7. Before video 1 goes live
+## 7. Building a network in Australia and New Zealand from scratch
+
+You can't sell content to an audience that doesn't exist yet. For the first 90 days, split your time roughly like this:
+
+**About half: in person and one to one.**
+- **Referral partners.** HR and People & Culture leads, psychologists, GPs, career coaches and EAP providers all see burnt-out professionals every week. Build a list of 20, meet five for coffee, and agree how you refer to each other. Five people who send referrals beat 5,000 followers.
+- **Free talks.** Offer a 30-minute talk on rest versus recovery to firm wellbeing committees, women's networks and professional bodies. You get a room of your exact buyer and permission to follow up. Your Big 4 background gets you in the door.
+- **Alumni routes.** KPMG Australia runs an alumni program with over 10,000 members and events nationally. Email them and ask whether a KPMG Canada alum can join. Rotman lists no Sydney chapter and invites alumni to start one, which is another way to get known.
+
+**About a third: LinkedIn aimed at AU and NZ.**
+- Connect the same day with everyone you meet, with a short note.
+- Comment daily on Australian and New Zealand voices (section 6).
+- Post two to three times a week from this plan. Text first while reach is small.
+
+**The rest: short video as a crosspost only.** Don't spend extra time on TikTok or Facebook until LinkedIn brings in conversations.
+
+Sources: [NapoleonCat LinkedIn Australia, June 2026](https://stats.napoleoncat.com/linkedin-users-in-australia/2026/06/), [KPMG Australia alumni](https://kpmg.com/content/kpmgpublic/au/en/home/alumni), [Rotman Regional Alumni](https://cd-www.rotman.utoronto.ca/Connect/RotmanAlumni/RotmanRegionalAlumni).
+
+---
+
+## 8. Before video 1 goes live
 
 - [ ] LinkedIn headline rewritten for the buyer, for example: "Burnout recovery coach for high performers | 15 years at KPMG, Deloitte, CIBC | Rotman MBA"
 - [ ] LinkedIn Featured section: the check-in link and the discovery call link
 - [ ] TikTok and Instagram bios: one line plus the check-in link
 - [ ] Profile photo: use `pri-about.webp` or `pri-2.webp` from the site, so you look the same everywhere
-- [ ] Message 20 former colleagues personally before you post. Tell them what you're doing now. Do not ask them to buy anything. Ask them to tell you if the first post rings true.
+- [ ] LinkedIn location set to Sydney
+- [ ] Message 20 former colleagues personally before you post. Tell them what you're doing now. Ask one thing: who do they know in Sydney, Melbourne or Auckland who would find this useful?
 
 ---
 
-## 8. Reverse-engineering people further ahead
+## 9. Reverse-engineering people further ahead
 
 Researched November 2026. I could not verify current follower or view counts from search; the one figure below came from a profile snapshot. Check each account in the app before you trust any number.
 
@@ -454,7 +477,7 @@ Sources: [Tara Kermiet TikTok](https://www.tiktok.com/@tarakermiet), [Job Change
 
 ---
 
-## 9. What to measure (and what to ignore)
+## 10. What to measure (and what to ignore)
 
 Ignore follower counts for the first three months.
 
