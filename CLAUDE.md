@@ -20,3 +20,13 @@ Example:
 - Wrong: "The work was hard — harder than expected."
 - Right: "The work was hard. Harder than expected."
 - Right: "The work was harder than expected."
+
+## Launch Board
+
+The founder tracks the launch on a private board: https://claude.ai/artifact/GwHgmM8DQ9o3mYnH9rdc25
+
+Every session that finishes, starts or unblocks a launch task updates the board before it ends, using the ArtifactData tool on that URL:
+- Collection `tasks`. Fields: `title`, `area` (`site`, `funnel`, `offer`, `content`, `launch`, `admin`), `status` (`todo`, `doing`, `blocked`, `done`), `priority` (`high`, `med`, `low`), `due` (YYYY-MM-DD or ""), `note`, `origin` (`repo` for facts, `suggested` for recommendations), `order`, `updatedAt`.
+- List the collection first and update the matching task instead of adding a duplicate. Pass `if_version`.
+- Put branch names and anything still unmerged or undeployed in the note.
+- The launch date lives in `board/settings` as `launchDate`.
