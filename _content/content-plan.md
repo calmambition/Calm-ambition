@@ -309,6 +309,8 @@ Everything inside a quote block is the exact copy. On LinkedIn, the first two li
 >
 > When you've been running hot for months, your body stops coming all the way back down between demands. Each round starts from a higher floor. A holiday lowers that floor a little. Then you walk back into the same way of working, and it climbs again within days.
 >
+> Researchers who track people through their holidays keep finding the same thing. The lift is usually gone within the first week back at work.
+>
 > For me, the problem was never the workload. It was how I'd been running the whole time.
 >
 > A holiday is a pause. What changes things is what you do differently on an ordinary Tuesday:
@@ -353,7 +355,7 @@ Everything inside a quote block is the exact copy. On LinkedIn, the first two li
 >
 > Before you close the laptop, write tomorrow's top three things on paper. Paper, not your phone.
 >
-> Then everything else stays on the page. Your brain keeps looping because it's worried you'll forget. Writing it down gives it somewhere to put it.
+> Then everything else stays on the page. In one sleep-lab study, people who wrote tomorrow's to-do list before bed fell asleep faster than people who wrote about what they'd already finished.
 >
 > It won't fix burnout. It's one small hard stop at the end of the day, and if you don't have one now, this is an easy place to start.
 >
@@ -560,6 +562,7 @@ Reply to comments and messages. Don't post. You're modelling the thing you coach
 > - One evening a week with a hard finish time, in your calendar like a client meeting
 > - The same wake time every day, weekends included
 > - Tomorrow's top three on paper before you close the laptop
+> - Short breaks every couple of months, instead of saving it all for one long holiday
 >
 > Pick one. Give it two weeks. Notice what changes.
 >
@@ -906,6 +909,33 @@ Track weekly in a spreadsheet:
 - Which posts got the most comments and saves
 
 After post 20, keep the three best hooks, turn them into videos from the bank or the ideas list, and drop the post type that got the least response.
+
+---
+
+## 11. Science check
+
+Checked on 8 November 2026 against the two daily briefings I could reach (20 September and 7 November) and the original studies. The other briefings sit in iCloud on your Mac, which this session can't reach.
+
+| Post | Claim | Status | Source |
+|---|---|---|---|
+| 4 | "Mental distance": pulling back from work without deciding to | Supported | Burnout Assessment Tool, Schaufeli et al. 2020 |
+| 4 | Long stress shifts the brain from deliberate choice to habit | Supported, in rats only. Keep "in animal studies". | Dias-Ferreira et al. 2009, *Science* |
+| 5 | Burnout is recovery failing between demands, not the demand itself | Supported. Resilient people don't react less, they recover faster after each stressor. | Rösner et al. 2026, *Comprehensive Psychoneuroendocrinology* (60 young men, so not settled) |
+| 6 | Holiday benefits fade within days of going back | Supported. Wellbeing is back at baseline after the first week back. | de Bloom et al. 2010, *Work & Stress*; 2023 meta-analysis of 13 studies, *European Psychologist* |
+| 8 | Writing tomorrow's list helps you switch off | Supported, small study. People who wrote a to-do list fell asleep faster than people who wrote what they'd done. I removed the line about why the brain loops; the study didn't test that. | Scullin et al. 2018, Baylor (healthy young adults) |
+| 11 | Burnout disrupts cortisol timing more than amount | Supported by your blog's sources | See cortisol blog post |
+| 11 | Morning light fixes cortisol | **Not used.** The 7 November briefing found the popular citation for this is a book, not a study. Don't add it. | |
+| 12 | 21-day myth, Lally figures | Supported | See habit blog post |
+| 16 | Short, regular breaks beat one long one | Supported. Longer holidays didn't add benefit. | 2023 meta-analysis, *European Psychologist* |
+
+### From the briefings: use, wait, or skip
+
+- **Use later (idea 34, "given more work because you're good"):** Melody Wilding in HBR, 16 September 2026. Leaders who absorb their team's overflow delay a structural conversation instead of fixing it. It's expert opinion built on one case, so present it as a view, not a finding.
+- **Use later, with care (new idea):** perimenopause and work. A Mayo Clinic study of 4,440 working women aged 45 to 60 found about 13% reported an adverse work outcome from symptoms, and estimated US$1.8 billion a year in lost workdays (Faubion et al., *Mayo Clinic Proceedings*, 2023). It's US data. Brain fog and poor sleep overlap with burnout, so tell people to see their GP; don't coach it as burnout. The briefing's "40% considered leaving" figure isn't verified, so leave it out.
+- **Wait:** "Burnout gets worse with seniority" (Sarilho et al., 7 November). One niche study in Brazil, no sample size in the coverage. Too thin for a post.
+- **Skip for now:** the nature meta-analysis effect sizes (most trials compared nature against doing nothing, which inflates the effect), and resting HRV posts (your audience doesn't need wearable debates yet).
+
+Sources: [Burnout Assessment Tool](https://mdpi-res.com/d_attachment/ijerph/ijerph-17-09495/article_deploy/ijerph-17-09495.pdf), [Rösner et al. 2026](https://pmc.ncbi.nlm.nih.gov/articles/PMC13138195/), [de Bloom et al. 2010](https://research.rug.nl/en/publications/effects-of-vacation-from-work-on-health-and-well-being-lots-of-fu/), [Vacation meta-analysis 2023](https://fis.tu-dresden.de/portal/en/publications/we-continue-to-recover-through-vacation-metaanalysis-of-vacation-effects-on-wellbeing-and-its-fadeout(afc00f0a-5761-4757-a23f-5b1e50b53604).html), [Scullin 2018, Baylor](https://news.web.baylor.edu/news/story/2018/can-writing-your-dos-help-you-doze-baylor-study-suggests-jotting-down-tasks-can), [Wilding, HBR](https://hbr.org/2026/09/when-theres-more-work-than-your-team-can-handle), [Mayo Clinic menopause study](https://newsnetwork.mayoclinic.org/discussion/mayo-clinic-study-puts-price-tag-on-cost-of-menopause-symptoms-for-women-in-the-workplace), [Sarilho et al. 2026](https://doi.org/10.1007/s10803-026-07606-8).
 
 ---
 
