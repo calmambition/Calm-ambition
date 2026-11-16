@@ -508,3 +508,48 @@ html.js .call-step.open .call-body { max-height: 12rem; opacity: 1; }
   .mpath[data-sel="1"] .mpath-back2, .mpath[data-sel="1"] .mpath-head2,
   .mpath[data-sel="3"] .mpath-back1, .mpath[data-sel="3"] .mpath-head1 { opacity: 0.22; }
 }
+
+/* ============================================================
+   Scrubbable blog charts (built by blog-charts.js)
+   ============================================================ */
+figure.scrub { display: none; }
+figure.scrub.is-ready { display: block; margin: 3rem 0; padding: 2rem; background: var(--cream); border: 1px solid var(--sand); }
+.article-content .scrub-title { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 400; color: var(--dark); line-height: 1.25; margin-bottom: 1.2rem; }
+.scrub-toggles { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.4rem; }
+.scrub-toggle { display: inline-flex; align-items: center; gap: 0.6rem; font: inherit; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--charcoal); background: transparent; border: 1px solid rgba(92,122,92,0.35); padding: 0.65rem 1rem; cursor: pointer; transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease; }
+.scrub-toggle:hover { border-color: var(--accent-text); }
+.scrub-toggle[aria-pressed="true"] { background: var(--dark); border-color: var(--dark); color: var(--cream); }
+.scrub-swatch { width: 18px; height: 2px; background: rgba(92,122,92,0.45); }
+.scrub-toggle[aria-pressed="true"] .scrub-swatch { background: var(--accent-light); }
+.scrub-toggle:focus-visible, .scrub-range:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.scrub-plot { position: relative; height: clamp(190px, 38vw, 260px); border-left: 1px solid rgba(46,61,48,0.25); border-bottom: 1px solid rgba(46,61,48,0.25); cursor: ew-resize; touch-action: pan-y; }
+.scrub-plot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.scrub-ylabel { position: absolute; left: 0.6rem; top: 0.3rem; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-text); pointer-events: none; }
+.scrub-line { fill: none; stroke: rgba(92,122,92,0.32); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; transition: stroke 0.35s ease, stroke-width 0.35s ease, opacity 0.35s ease; }
+.scrub-line.is-active { stroke: var(--accent-text); stroke-width: 2.5; }
+.scrub-extra { stroke: var(--ca-gold); stroke-dasharray: 5 5; opacity: 0; }
+.scrub-extra.is-shown { opacity: 1; }
+.scrub-extra-tag { position: absolute; transform: translate(-50%, 7px); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: #7A6336; white-space: nowrap; pointer-events: none; }
+.scrub-guide { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(46,61,48,0.22); pointer-events: none; }
+.scrub-dot { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--accent-text); border: 2px solid var(--cream); box-shadow: 0 0 0 1px var(--accent-text); pointer-events: none; transition: top 0.3s ease; }
+.scrub-range { -webkit-appearance: none; appearance: none; display: block; width: 100%; height: 28px; margin: 0.4rem 0 0; background: transparent; cursor: pointer; }
+.scrub-range::-webkit-slider-runnable-track { height: 2px; background: rgba(92,122,92,0.4); }
+.scrub-range::-moz-range-track { height: 2px; background: rgba(92,122,92,0.4); }
+.scrub-range::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; margin-top: -10px; border-radius: 50%; background: var(--dark); border: 2px solid var(--cream); box-shadow: 0 0 0 1px var(--dark); }
+.scrub-range::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--dark); border: 2px solid var(--cream); box-shadow: 0 0 0 1px var(--dark); }
+.scrub-ticks { position: relative; height: 1.4rem; }
+.scrub-ticks span { position: absolute; transform: translateX(-50%); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-text); white-space: nowrap; }
+.scrub-ticks span.first { transform: none; }
+.scrub-ticks span.last { transform: translateX(-100%); left: 100% !important; }
+.scrub-caption { min-height: 7.5rem; margin-top: 1.2rem; padding-top: 1.2rem; border-top: 1px solid var(--sand); }
+.article-content .scrub-zone { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-text); margin-bottom: 0.4rem; font-weight: 400; line-height: 1.5; }
+.article-content .scrub-text { font-size: 1rem; color: var(--dark); line-height: 1.75; margin-bottom: 0; font-weight: 300; }
+.scrub-note { font-size: 0.78rem; color: var(--charcoal); line-height: 1.7; margin-top: 1rem; opacity: 0.85; }
+@media (max-width: 480px) {
+  figure.scrub.is-ready { padding: 1.4rem 1.1rem; margin: 2.5rem 0; }
+  .scrub-toggle { flex: 1 1 auto; justify-content: center; }
+  .scrub-caption { min-height: 10.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scrub-line, .scrub-dot, .scrub-toggle { transition: none; }
+}
