@@ -650,3 +650,29 @@ figure.scrub.is-ready { display: block; margin: 3rem 0; padding: 2rem; backgroun
 }
 html:not(.js) .road-step::before { transform: scaleY(1); }
 html:not(.js) .step-num::after { transform: scaleY(var(--lvl, 1)); }
+
+/* ============================================================
+   Two roads side by side on wide screens (script at the end of index.html).
+   Narrow screens keep the toggle.
+   ============================================================ */
+.split-helper, .road-col-label { display: none; }
+@media (min-width: 1080px) {
+  #two-roads .toggle-helper, #two-roads .roads-toggle { display: none; }
+  #two-roads .split-helper { display: block; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-light); margin: 1.4rem 0 1.2rem; opacity: 0.85; line-height: 1.7; }
+  #two-roads .roads-key { margin-bottom: 2rem; }
+  #two-roads .roads-split { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.5rem; align-items: start; }
+  #two-roads .road-panel { display: block; }
+  #two-roads .road-col-label { display: block; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 500; padding: 1.1rem 2rem 1.1rem 2.8rem; }
+  #two-roads .chronic-panel { border: 1px solid rgba(184,206,180,0.18); background: rgba(255,255,255,0.025); }
+  #two-roads .chronic-panel .road-col-label { color: var(--accent-light); }
+  #two-roads .resolved-panel { border: 1px solid var(--sand); }
+  #two-roads .resolved-panel .road-col-label { color: var(--accent-text); background: var(--cream); }
+  #two-roads .chronic-step, #two-roads .resolved-step { padding: 1.8rem 2rem 1.8rem 2.8rem; }
+  #two-roads .chronic-step::before, #two-roads .resolved-step::before { top: calc(1.8rem + 17px); left: calc(2.8rem + 16.25px); }
+  #two-roads .chronic-outcome, #two-roads .resolved-outcome { padding: 2rem 2rem 2rem 2.8rem; margin-top: 0; }
+  #two-roads .resolved-outcome { border-top: 1px solid var(--sand); }
+  /* half-width columns: stack the quote under the step again */
+  #two-roads .road-step > div:last-child { display: block; }
+  #two-roads .road-step .step-body { margin-bottom: 0.6rem; }
+  #two-roads .road-step .step-quote { padding-left: 0; border-left: 0; font-size: 1.15rem; }
+}
