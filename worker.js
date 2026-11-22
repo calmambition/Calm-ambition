@@ -160,7 +160,7 @@ async function generateReadout(answers, freeText, env) {
 
 // Email sending config
 const FROM_EMAIL = "Calm Ambition <hello@calmambition.com.au>";
-const REPLY_TO_EMAIL = "thecalmcoach.pri@gmail.com"; // replies land in Pri's Gmail
+const REPLY_TO_EMAIL = "hello@calmambition.com.au"; // replies land in the iCloud+ inbox
 const BOOKING_URL = "https://calmambition.github.io/Calm-ambition/#contact";
 
 function isAllowedOrigin(origin) {
