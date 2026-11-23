@@ -475,89 +475,83 @@ Each script has four parts: **Hook** (say it to the lens, on-screen text up for 
 
 ---
 
-#### Day 13. Busy season never ended
+#### Day 13. My story, part 1: the fifteen years
 
-**On-screen:** Busy season is supposed to end
+**On-screen:** My burnout story. Part 1: the fifteen years
+
+**Note:** skip your intro line in all three parts. The whole video is the intro.
 
 **Hook**
-> Busy season is supposed to end. When did yours?
+> For fifteen years I was the high performer everyone could rely on. Here's what it cost me.
 
-**Why**
-> Your body is built for pressure that comes and goes. You rise to the deadline, the deadline passes, and you come back down.
+**The story**
+> I worked in corporate in Toronto for fifteen years. KPMG, Deloitte, CIBC. For a lot of that time I was doing an MBA part-time as well.
 >
-> The trouble starts when the pressure never passes. One stretch ends and the next starts the same week. Your body never gets the all-clear, so each round starts from a higher floor.
+> I was a high performer, and I gave up nearly everything outside work to stay one. Everything I had went into the job. Whatever was left ran the rest of my life, and there was never much left.
 >
-> I spent fifteen years in corporate telling myself it would ease once this stretch was over. There was always another stretch.
+> By the end I was on autopilot. In every meeting, saying the right things, and watching myself do it as if it were someone else's life. I couldn't switch off. I took two weeks away, and it changed nothing.
+>
+> And because my work never slipped, nobody asked if I was okay. I didn't ask myself either. I kept thinking it would ease once this stretch was over. There was always another stretch.
+>
+> I stopped when I couldn't carry it any further. Later than I should have.
 
-**Try this**
-> Get your calendar out and look back over the last twelve months. Count the weeks where work actually let up. Not a holiday. A normal week where you finished on time and didn't think about work at night.
->
-> If the number is under five, you're not in a busy season. This is how your year runs.
->
-> Then pick one recovery habit you'll keep even when it's busy. One hard finish a week is a good start. Busy weeks are exactly when it matters.
+**What to take from it**
+> If work is the only part of your life that's still going well, that isn't proof you're fine. Your work is often the last thing to show it.
 
 **CTA**
-> How many weeks did you count? Comment the number.
+> Part two is what happened when I stopped. Follow so you see it tomorrow.
 
 ---
 
-#### Day 14. Inside the check-in
+#### Day 14. My story, part 2: the stop
 
-**On-screen:** 4 minutes. 14 questions. 3 things to try.
+**On-screen:** My burnout story. Part 2: the stop
 
 **Hook**
-> This is the check-in I built for people who are still performing and running on empty.
+> I moved to the other side of the world to stop living the way I had been. Two weeks after I landed, the world shut down.
 
-**Why**
-> Most burnout quizzes give you a score and a label. That doesn't tell you what to do on Monday.
+**The story**
+> When I left corporate, I knew a break wouldn't be enough. If I stayed, I'd keep choosing the same way I always had. So I moved to Australia.
 >
-> This one looks at four areas: your body, your mind, your drive, and your life outside work. You answer fourteen questions, including two where you describe your situation in your own words.
+> I had a plan. A structured year. Casual work I could leave behind at the end of a shift, then a careful return to corporate once I had something left to bring to it.
 >
-> At the end you get a readout written in plain language. It tells you where each area sits, the pattern connecting them, and three small things to try over the next two weeks, matched to where you're struggling most.
+> A fortnight after I landed, lockdown started. The casual work disappeared, and the plan went with it.
+>
+> What I got instead was the one thing I'd never been able to arrange for myself: a complete stop, with nothing waiting behind it.
+>
+> Rebuilding from there is how I learned what my capacity actually was, and where my boundaries had to sit to protect it.
 
-**Try this**
-> Do it on a Sunday evening, when you're honest about the week ahead.
->
-> Then pick one of the three suggestions and try it for two weeks. Just one.
->
-> Do the check-in again afterwards and see what moved.
+**What to take from it**
+> Most people can't stop completely, and you shouldn't have to. You've got people relying on you and work that won't pause. So your version has to happen inside the life you already have. That's harder than what I did, and it's the only thing I work on now.
 
 **CTA**
-> The link's in my profile. It takes about four minutes, and it's a self-reflection tool, not a diagnosis.
-
-**Visual:** screen-record the first three questions on your phone.
+> Part three is what I do differently now. Follow for it tomorrow.
 
 ---
 
-### Week 3: "Here's what to try"
+#### Day 15. My story, part 3: what changed
 
-#### Day 15. The caffeine cutoff
-
-**On-screen:** Your 3pm coffee might be costing you an hour of sleep
+**On-screen:** My burnout story. Part 3: what I do differently now
 
 **Hook**
-> Your three o'clock coffee might be costing you an hour of sleep, and you wouldn't know.
+> Six months after lockdown, I fell into modelling by accident. The pressure was the same as consulting. I wasn't.
 
-**Why**
-> In a 2013 study, researchers gave people a strong dose of caffeine at bedtime, three hours before, or six hours before. Even six hours before bed, it cut their sleep by about an hour.
+**The story**
+> I loved modelling, and it was no gentler than corporate. You're measured on output, and the measuring never stops. I did it for six years.
 >
-> Here's the part that matters. The people in the study didn't notice. Their sleep diaries said they slept fine. The monitors said otherwise.
+> The difference was me. By then I knew how much I could carry, and where I had to stop.
 >
-> So if you wake up flat and reach for coffee, then sleep badly, the coffee may be part of the loop.
+> That's when I understood my corporate years properly. The problem was never only the workload. It was how I'd been running the whole time. Changing jobs doesn't take the pressure away, because the pressure was never only coming from the job.
+>
+> Now I'm a burnout recovery coach in Sydney. I work with professionals across Australia and New Zealand who are where I was: still performing, and giving up everything else to do it. I help them notice the early signs and change course before it gets as far as it did for me.
 
 **Try this**
-> Move your caffeine cutoff to midday for two weeks.
+> If you see yourself in this story, start with one question. What have I been giving up to keep performing?
 >
-> Swap your afternoon coffee for decaf, or a walk. Expect the first few days to be harder.
->
-> Keep a simple note each morning: how did I sleep, out of ten? At the end of two weeks, compare the first week to the second.
->
-> It was a small study, and the dose was high. Your own two weeks will tell you more than I can.
+> Write down three things. A friendship, your health, evenings with your family, whatever it is. That list is where the work starts.
 
 **CTA**
-> Save this and start tomorrow.
-
-*Source: Drake et al. (2013), Journal of Clinical Sleep Medicine, 12 healthy sleepers.*
+> If you'd like to talk it through, there's a free thirty-minute call. The link's in my profile.
 
 ---
 
@@ -843,31 +837,33 @@ Each script has four parts: **Hook** (say it to the lens, on-screen text up for 
 
 ---
 
-#### Day 25. Changing jobs didn't change the pressure
+#### Day 25. The caffeine cutoff
 
-**On-screen:** I left corporate and became a model. The pressure followed.
+**On-screen:** Your 3pm coffee might be costing you an hour of sleep
 
 **Hook**
-> I left corporate, moved across the world, and fell into modelling by accident. The pressure came with me.
+> Your three o'clock coffee might be costing you an hour of sleep, and you wouldn't know.
 
 **Why**
-> I loved modelling. And it was no gentler than consulting. You're measured on output, and the measuring never stops.
+> In a 2013 study, researchers gave people a strong dose of caffeine at bedtime, three hours before, or six hours before. Even six hours before bed, it cut their sleep by about an hour.
 >
-> The work wasn't easier. I handled it differently. By then I knew what I could carry and where I had to stop.
+> Here's the part that matters. The people in the study didn't notice. Their sleep diaries said they slept fine. The monitors said otherwise.
 >
-> That's what I see in a lot of professionals. They think the job is the problem, so they change jobs. And the same pattern turns up in the new one within a year, because the pattern was in how they work.
+> So if you wake up flat and reach for coffee, then sleep badly, the coffee may be part of the loop.
 
 **Try this**
-> Before you decide to quit, answer three questions honestly.
+> Move your caffeine cutoff to midday for two weeks.
 >
-> One. Have I felt this way in a previous job?
-> Two. If I moved tomorrow, what would I do differently in the new role? Name something specific.
-> Three. What's one thing I could try in this job first, to test whether it's the role or my way of working?
+> Swap your afternoon coffee for decaf, or a walk. Expect the first few days to be harder.
 >
-> Sometimes the job really is the problem. But it's worth knowing which before you leave.
+> Keep a simple note each morning: how did I sleep, out of ten? At the end of two weeks, compare the first week to the second.
+>
+> It was a small study, and the dose was high. Your own two weeks will tell you more than I can.
 
 **CTA**
-> Follow if you've ever changed jobs and found the same problem waiting.
+> Save this and start tomorrow.
+
+*Source: Drake et al. (2013), Journal of Clinical Sleep Medicine, 12 healthy sleepers.*
 
 ---
 
@@ -1018,6 +1014,7 @@ Each script has four parts: **Hook** (say it to the lens, on-screen text up for 
 - **Booking link:** days 26, 29 and 30 need it live.
 - **Day 7:** general information only. Point people to the Fair Work Ombudsman for their own situation.
 - **Day 17:** US study. Keep "see your GP" in the script.
+- **Story series (days 13 to 15):** post on consecutive days, and pin Part 1 to your profile. Check every line against your story before filming. I left therapy out, because I don't know when it happened in relation to the move. Post 17 in the main plan covers it.
 - **After day 10:** look at which three videos people watched longest. Make more in those shapes and drop the weakest.
 
 ### Sources for the scripts
